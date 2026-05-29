@@ -8,27 +8,28 @@
 body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111);font-size:14px;background:transparent}
 .pg{padding:.75rem 0}
 
-/* AIRBNB BANNER */
-.ab{background:linear-gradient(135deg,#FF5A5F15,#FF5A5F08);border:0.5px solid #FF5A5F40;border-radius:10px;padding:10px 14px;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.info-banner{background:linear-gradient(135deg,#FBEAF010,#FFF0F520);border:0.5px solid #F5B8CE60;border-radius:10px;padding:10px 14px;margin-bottom:1.2rem;display:flex;align-items:center;gap:10px}
+.info-text{font-size:12px;color:var(--color-text-secondary)}
+.info-text strong{color:var(--color-text-primary)}
+
+.ab{background:linear-gradient(135deg,#FF5A5F15,#FF5A5F08);border:0.5px solid #FF5A5F40;border-radius:10px;padding:10px 14px;margin-bottom:1rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .ab-icon{font-size:20px;flex-shrink:0}
-.ab-info{flex:1}
+.ab-info{flex:1;min-width:160px}
 .ab-title{font-size:13px;font-weight:600}
 .ab-sub{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
-.ab-link{font-size:11px;padding:5px 10px;background:#FF5A5F;color:white;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.ab-link{font-size:11px;padding:5px 10px;background:#FF5A5F;color:white;border-radius:6px;text-decoration:none;white-space:nowrap}
 
-/* SUMMARY */
 .sumgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:7px;margin-bottom:1.2rem}
 .sc{background:var(--color-background-secondary,#f5f5f5);border-radius:8px;padding:10px 12px}
 .sc .sl{font-size:10px;color:var(--color-text-tertiary,#888);margin-bottom:3px;text-transform:uppercase;letter-spacing:.03em}
 .sc .sv{font-size:18px;font-weight:600}
 .sc .ss{font-size:10px;color:var(--color-text-secondary,#666);margin-top:2px}
 
-/* ADD MODULE */
 .add-module{background:var(--color-background-secondary,#f5f5f5);border:0.5px solid var(--color-border-secondary,#ddd);border-radius:10px;padding:12px 14px;margin-bottom:1rem}
 .add-header{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
-.add-header-icon{width:28px;height:28px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:14px;color:white;flex-shrink:0}
+.add-header-icon{width:28px;height:28px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:16px;color:white;flex-shrink:0;font-weight:700}
 .add-header-title{font-size:13px;font-weight:600;flex:1}
-.add-toggle{font-size:18px;color:var(--color-text-secondary);transition:transform .2s}
+.add-toggle{font-size:20px;color:var(--color-text-secondary);transition:transform .2s;line-height:1}
 .add-toggle.open{transform:rotate(45deg)}
 .add-body{display:none;margin-top:12px;padding-top:12px;border-top:0.5px solid var(--color-border-tertiary,#e5e5e5)}
 .add-body.open{display:block}
@@ -45,35 +46,80 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
 .icon-opt:hover{background:var(--color-background-secondary,#f5f5f5)}
 .imp-toggle{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:0.5px solid var(--color-border-secondary,#ddd);background:var(--color-background-primary,#fff);cursor:pointer;margin-bottom:8px}
 .imp-toggle span{font-size:12px;flex:1}
-.imp-check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--color-border-secondary,#ddd);display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .1s;flex-shrink:0}
+.imp-check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--color-border-secondary,#ddd);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
 .imp-check.on{background:#EF9F27;border-color:#EF9F27;color:white}
-.btn-add{width:100%;padding:9px;border-radius:8px;background:#1D9E75;color:white;font-size:13px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .1s}
+.btn-add{width:100%;padding:9px;border-radius:8px;background:#1D9E75;color:white;font-size:13px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
 .btn-add:hover{background:#178A65}
-.btn-add:disabled{background:#9FE1CB;cursor:default}
-.add-success{display:none;text-align:center;padding:10px;background:#E1F5EE;border-radius:8px;font-size:12px;color:#0F6E56;font-weight:500}
+.add-success{display:none;text-align:center;padding:10px;background:#E1F5EE;border-radius:8px;font-size:12px;color:#0F6E56;font-weight:500;margin-bottom:8px}
 
-/* DAY NAV */
 .daynav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1rem}
 .dbt{padding:5px 10px;border-radius:20px;font-size:11px;cursor:pointer;border:0.5px solid var(--color-border-secondary,#ddd);background:var(--color-background-primary,#fff);color:var(--color-text-secondary,#666);white-space:nowrap}
 .dbt:hover{background:var(--color-background-secondary,#f5f5f5)}
 .dbt.on{background:#1D9E75;color:#fff;border-color:#1D9E75;font-weight:600}
+.dbt.boda-tab{border-color:#D4537E;color:#D4537E}
+.dbt.boda-tab.on{background:#D4537E;border-color:#D4537E;color:#fff}
 .dbt.sp{opacity:.4;pointer-events:none}
 .dbt.custom{border-color:#7F77DD;color:#534AB7}
 .dbt.custom.on{background:#7F77DD;border-color:#7F77DD;color:#fff}
 
-/* DAY VIEW */
 .dv{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e5e5e5);border-radius:12px;padding:1.1rem}
-.dhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:0.5px solid var(--color-border-tertiary,#e5e5e5)}
+.dhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:0.5px solid var(--color-border-tertiary,#e5e5e5);flex-wrap:wrap;gap:8px}
 .dhl{display:flex;align-items:center;gap:10px}
 .badge{width:40px;height:40px;border-radius:50%;background:#E1F5EE;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.badge.boda-badge{background:#FBEAF0}
 .bnum{font-size:13px;font-weight:600;color:#0F6E56;line-height:1}
+.bnum.boda-num{color:#D4537E}
 .bmes{font-size:9px;color:var(--color-text-tertiary,#888)}
 .dtit{font-size:15px;font-weight:600}
 .dsubt{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
 .dtot .tl{font-size:10px;color:var(--color-text-tertiary);text-align:right}
 .dtot .tv{font-size:17px;font-weight:600;color:#0F6E56;text-align:right}
 
-/* ITEMS */
+/* DIA 4 ESPECIAL */
+.d4-card{background:linear-gradient(135deg,#FFF8FB,#FBEAF0);border:0.5px solid #F5B8CE;border-radius:12px;padding:1.25rem}
+.d4-header{text-align:center;margin-bottom:1.2rem}
+.d4-emoji{font-size:40px;margin-bottom:6px}
+.d4-title{font-size:17px;font-weight:700;color:#993556}
+.d4-sub{font-size:12px;color:#C06080;margin-top:4px}
+.d4-items{display:flex;flex-direction:column;gap:10px}
+.d4-item{background:white;border-radius:10px;padding:14px;border:0.5px solid #F5B8CE40;display:flex;gap:12px;align-items:flex-start}
+.d4-item.highlight{border-color:#D4537E;background:linear-gradient(135deg,#FFF0F5,white)}
+.d4-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.d4-info{flex:1}
+.d4-time{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-tertiary);margin-bottom:2px}
+.d4-name{font-size:14px;font-weight:700;color:var(--color-text-primary);margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.d4-name-badge{font-size:10px;background:#FBEAF0;color:#993556;padding:1px 7px;border-radius:10px;font-weight:600;border:0.5px solid #F5B8CE}
+.d4-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:8px}
+.d4-links{display:flex;gap:6px;flex-wrap:wrap}
+.d4-btn{font-size:11px;padding:5px 10px;border-radius:7px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border:none;cursor:pointer;font-weight:500;font-family:inherit}
+.d4-btn-maps{background:#E8F4FD;color:#1A6FAF;border:0.5px solid #B3D7F5}
+.d4-btn-waze{background:#E6F0FF;color:#1A4FC4;border:0.5px solid #B3C9F5}
+.d4-btn-res{background:#E1F5EE;color:#0F6E56;border:0.5px solid #9FE1CB}
+.d4-note{background:#FFF8E1;border:0.5px solid #FFD54F;border-radius:8px;padding:10px 12px;font-size:11px;color:#7A5000;margin-top:10px;line-height:1.6;display:flex;gap:8px;align-items:flex-start}
+
+/* BODA CARD */
+.boda-card{background:linear-gradient(135deg,#FBEAF0,#FFF0F5);border:0.5px solid #F5B8CE;border-radius:12px;padding:1.25rem;margin-bottom:12px}
+.boda-header{text-align:center;margin-bottom:1.2rem}
+.boda-emoji{font-size:36px;margin-bottom:6px}
+.boda-title{font-size:18px;font-weight:700;color:#993556}
+.boda-date{font-size:13px;color:#C06080;margin-top:4px}
+.boda-events{display:flex;flex-direction:column;gap:12px}
+.boda-event{background:white;border-radius:10px;padding:14px;border:0.5px solid #F5B8CE;display:flex;gap:12px;align-items:flex-start}
+.boda-event-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.boda-event-icon.civil{background:#FBEAF0}
+.boda-event-icon.recep{background:#E6F1FB}
+.boda-event-info{flex:1}
+.boda-event-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary);margin-bottom:3px}
+.boda-event-name{font-size:14px;font-weight:700;color:var(--color-text-primary);margin-bottom:4px}
+.boda-event-addr{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:6px}
+.boda-event-time{font-size:12px;font-weight:600;color:#993556;margin-bottom:8px}
+.boda-links{display:flex;gap:6px;flex-wrap:wrap}
+.boda-btn{font-size:11px;padding:5px 10px;border-radius:7px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border:none;cursor:pointer;font-weight:500;font-family:inherit}
+.boda-btn-maps{background:#E8F4FD;color:#1A6FAF;border:0.5px solid #B3D7F5}
+.boda-btn-waze{background:#E6F0FF;color:#1A4FC4;border:0.5px solid #B3C9F5}
+.boda-note{background:#FFF8E1;border:0.5px solid #FFD54F;border-radius:8px;padding:10px 12px;font-size:11px;color:#7A5000;margin-top:10px;line-height:1.5}
+
+/* ROWS */
 .row{display:grid;grid-template-columns:44px 1fr auto;gap:8px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary,#e5e5e5);align-items:start}
 .row:last-child{border-bottom:none}
 .row.user-added{background:linear-gradient(90deg,#EEEDFE30,transparent);border-radius:6px;padding:8px 6px}
@@ -85,7 +131,7 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
 .user-badge{font-size:9px;background:#EEEDFE;color:#534AB7;padding:1px 6px;border-radius:8px;font-weight:600;flex-shrink:0;margin-top:2px}
 .idesc{font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.45}
 .ilinks{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;align-items:center}
-.lbtn{font-size:10px;padding:2px 8px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:3px;white-space:nowrap;border:none;cursor:pointer}
+.lbtn{font-size:10px;padding:2px 8px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:3px;white-space:nowrap;border:none;cursor:pointer;font-family:inherit}
 .lbtn-maps{background:#E8F4FD;color:#1A6FAF;border:0.5px solid #B3D7F5}
 .lbtn-ticket{background:#FFF0E0;color:#B05A00;border:0.5px solid #FACA8A}
 .lbtn-free{background:#E1F5EE;color:#0F6E56;border:0.5px solid #9FE1CB}
@@ -93,20 +139,14 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
 .lbtn-del{background:#FEE2E2;color:#B91C1C;border:0.5px solid #FCA5A5}
 .icost{font-size:12px;font-weight:600;white-space:nowrap}
 .icost.free{color:#1D9E75}
-
-/* ROUTE */
 .rtebox{background:#E1F5EE;border-radius:8px;padding:8px 11px;margin-top:10px}
 .rtelabel{font-size:10px;font-weight:600;color:#0F6E56;margin-bottom:4px}
 .rtesteps{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
 .rts{font-size:10px;color:#085041;background:white;padding:2px 7px;border-radius:8px;border:0.5px solid #9FE1CB}
 .rta{font-size:11px;color:#1D9E75;padding:0 1px}
-
-/* SPECIAL */
 .spbox{background:var(--color-background-secondary,#f5f5f5);border-radius:8px;padding:2rem;text-align:center}
 .sptit{font-size:15px;font-weight:600;margin-top:8px}
 .spsub{font-size:12px;color:var(--color-text-secondary);margin-top:4px}
-
-/* NAV */
 .navrow{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:.8rem;border-top:0.5px solid var(--color-border-tertiary,#e5e5e5)}
 .nb{padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;border:0.5px solid var(--color-border-secondary,#ddd);background:var(--color-background-primary,#fff);color:var(--color-text-secondary);display:flex;align-items:center;gap:4px}
 .nb:hover{background:var(--color-background-secondary,#f5f5f5)}
@@ -114,14 +154,12 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
 .dots{display:flex;gap:3px}
 .dot{width:5px;height:5px;border-radius:50%;background:var(--color-border-secondary,#ddd)}
 .dot.on{background:#1D9E75}
-.dot.custom{background:#C4C1F5}
-.dot.custom.on{background:#7F77DD}
-
-/* LEGEND */
+.dot.boda-dot.on{background:#D4537E}
+.dot.boda-dot{background:#F5B8CE}
+.dot.custom-dot{background:#C4C1F5}
+.dot.custom-dot.on{background:#7F77DD}
 .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem;padding-top:.8rem;border-top:0.5px solid var(--color-border-tertiary,#e5e5e5)}
 .leg{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--color-text-secondary)}
-
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;display:flex;align-items:center;justify-content:center;padding:1rem}
 .modal-box{background:var(--color-background-primary,#fff);border-radius:12px;padding:1rem;max-width:400px;width:100%}
 .modal-title{font-size:14px;font-weight:600;margin-bottom:.75rem;display:flex;justify-content:space-between;align-items:center}
@@ -131,58 +169,48 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
 <body>
 <div class="pg">
 
-<!-- AIRBNB BANNER -->
+<div class="info-banner">
+  <span style="font-size:20px">💍</span>
+  <div class="info-text"><strong>Día 4 actualizado:</strong> Se agregó la cena previa con los novios antes de la ceremonia del día 5.</div>
+</div>
+
 <div class="ab">
   <div class="ab-icon">🏠</div>
   <div class="ab-info">
     <div class="ab-title">Tu Airbnb — 10 Rue des Eaux, 75016 París</div>
-    <div class="ab-sub">Passy · 10 min a pie Torre Eiffel · Barrio residencial muy seguro</div>
+    <div class="ab-sub">Passy · 10 min a pie Torre Eiffel · Zona muy segura</div>
   </div>
-  <a class="ab-link" href="https://maps.app.goo.gl/uXT149wBYheij2Rz5" target="_blank">📍 Maps</a>
+  <a class="ab-link" href="https://www.google.com/maps/search/10+Rue+des+Eaux+75016+Paris" target="_blank">📍 Maps</a>
 </div>
 
-<!-- SUMMARY -->
 <div class="sumgrid" id="SUM"></div>
 
-<!-- ADD MODULE -->
 <div class="add-module">
   <div class="add-header" onclick="toggleAdd()">
     <div class="add-header-icon">+</div>
-    <div class="add-header-title">Agregar un destino a tu viaje</div>
+    <div class="add-header-title">Agregar un destino a tu itinerario</div>
     <span class="add-toggle" id="ADD_TOGGLE">+</span>
   </div>
   <div class="add-body" id="ADD_BODY">
-    <div class="form-grid full">
-      <div>
-        <label class="flabel">Nombre del lugar *</label>
-        <input class="finput" id="f_name" placeholder="Ej: Sacré-Cœur, Le Comptoir du Relais..." maxlength="60">
-      </div>
+    <div class="form-grid full" style="margin-bottom:8px">
+      <div><label class="flabel">Nombre del lugar *</label>
+      <input class="finput" id="f_name" placeholder="Ej: Le Marché Bio, Musée Carnavalet..." maxlength="60"></div>
     </div>
-    <div class="form-grid full">
-      <div>
-        <label class="flabel">Descripción (opcional)</label>
-        <input class="finput" id="f_desc" placeholder="Ej: Bistró clásico cerca del Odéon, reserva recomendada..." maxlength="120">
-      </div>
+    <div class="form-grid full" style="margin-bottom:8px">
+      <div><label class="flabel">Descripción</label>
+      <input class="finput" id="f_desc" placeholder="Ej: Bistró local cerca del Marais..." maxlength="120"></div>
     </div>
-    <div class="form-grid">
-      <div>
-        <label class="flabel">Día del viaje *</label>
-        <select class="fselect" id="f_day"></select>
-      </div>
-      <div>
-        <label class="flabel">Horario</label>
-        <input class="finput" id="f_time" placeholder="Ej: 10h, 14:30h, Noche...">
-      </div>
+    <div class="form-grid" style="margin-bottom:8px">
+      <div><label class="flabel">Día *</label>
+      <select class="fselect" id="f_day"></select></div>
+      <div><label class="flabel">Horario</label>
+      <input class="finput" id="f_time" placeholder="Ej: 10h, 14:30h, Noche..."></div>
     </div>
-    <div class="form-grid">
-      <div>
-        <label class="flabel">Costo estimado (€)</label>
-        <input class="finput" id="f_cost" type="number" min="0" max="500" placeholder="0 = Gratis">
-      </div>
-      <div>
-        <label class="flabel">Link de Maps (opcional)</label>
-        <input class="finput" id="f_maps" placeholder="https://maps.google.com/...">
-      </div>
+    <div class="form-grid" style="margin-bottom:8px">
+      <div><label class="flabel">Costo estimado (€)</label>
+      <input class="finput" id="f_cost" type="number" min="0" max="999" placeholder="0 = Gratis"></div>
+      <div><label class="flabel">Link de Maps</label>
+      <input class="finput" id="f_maps" placeholder="https://maps.google.com/..."></div>
     </div>
     <label class="flabel" style="margin-bottom:6px">Elige un icono</label>
     <div class="icon-grid" id="ICON_GRID"></div>
@@ -190,14 +218,11 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
       <span>⭐ Marcar como mi imperdible</span>
       <div class="imp-check" id="IMP_CHECK"></div>
     </div>
-    <div class="add-success" id="ADD_SUCCESS">✅ ¡Agregado correctamente! Navega al día seleccionado para verlo.</div>
-    <button class="btn-add" id="BTN_ADD" onclick="addDestino()">
-      <span>+</span> Agregar al itinerario
-    </button>
+    <div class="add-success" id="ADD_SUCCESS">✅ ¡Agregado! Navega al día seleccionado para verlo.</div>
+    <button class="btn-add" onclick="addDestino()">+ Agregar al itinerario</button>
   </div>
 </div>
 
-<!-- DAY NAV -->
 <div class="daynav" id="NAV"></div>
 <div id="DV"></div>
 
@@ -208,323 +233,391 @@ body{font-family:var(--font-sans,system-ui);color:var(--color-text-primary,#111)
   <div class="leg"><span>🎨</span> Arte/Museo</div>
   <div class="leg"><span>🛍️</span> Mercado</div>
   <div class="leg"><span>🌿</span> Parque</div>
-  <div class="leg"><span>⭐</span> Tu imperdible</div>
-  <div class="leg"><span style="font-size:9px;background:#EEEDFE;color:#534AB7;padding:1px 5px;border-radius:6px;font-weight:600">TÚ</span> Agregado por ti</div>
+  <div class="leg"><span>💍</span> Boda</div>
+  <div class="leg"><span>⭐</span> Imperdible</div>
+  <div class="leg"><span style="font-size:9px;background:#EEEDFE;color:#534AB7;padding:1px 5px;border-radius:6px;font-weight:600">TÚ</span> Agregado</div>
 </div>
 </div>
 
-<!-- PHOTO MODAL -->
 <div class="modal-overlay" id="MODAL" style="display:none" onclick="closeModal(event)">
   <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-title">
-      <span id="MODAL_TITLE">Fotos</span>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
+    <div class="modal-title"><span id="MODAL_TITLE">Fotos</span><button class="modal-close" onclick="closeModal()">✕</button></div>
     <div id="MODAL_CONTENT"></div>
   </div>
 </div>
 
 <script>
-// ============================================================
-// DATA
-// ============================================================
-const ICONS=["🏛️","🍽️","🎷","🎨","🛍️","🌿","☕","🍷","🏍️","⛪","👑","🎵","🥐","🍦","🥩","🥞","🌯","⛵","🏃","📸","🎭","🏬","📚","🌸","🦆","🍔","🗼","✈️","🎪","🎠"];
-const ICON_COLORS={"🏛️":"#E6F1FB","🍽️":"#FAEEDA","🎷":"#F1EFE8","🎨":"#FBEAF0","🛍️":"#EEEDFE","🌿":"#EAF3DE","☕":"#FAEEDA","🍷":"#F1EFE8","🏍️":"#FAEEDA","⛪":"#E6F1FB","👑":"#E6F1FB","🎵":"#EEEDFE","🥐":"#FAEEDA","🍦":"#FAEEDA","🥩":"#FAEEDA","🥞":"#FAEEDA","🌯":"#FAEEDA","⛵":"#E6F1FB","🏃":"#EAF3DE","📸":"#FBEAF0","🎭":"#E6F1FB","🏬":"#FAEEDA","📚":"#EEEDFE","🌸":"#EEEDFE","🦆":"#FAEEDA","🍔":"#FAEEDA","🗼":"#E6F1FB","✈️":"#E1F5EE","🎪":"#FBEAF0","🎠":"#FBEAF0"};
-let selIcon="🏛️";
-let isImp=false;
+const ICONS=["🏛️","🍽️","🎷","🎨","🛍️","🌿","☕","🍷","🏍️","⛪","👑","🎵","🥐","🍦","🥩","🥞","🌯","⛵","🏃","📸","🎭","🏬","📚","🌸","🦆","🍔","🗼","✈️","🎪","🎠","🧁","🎶","🏊","🎯","🌃"];
+const IBGS={"🏛️":"#E6F1FB","🍽️":"#FAEEDA","🎷":"#F1EFE8","🎨":"#FBEAF0","🛍️":"#EEEDFE","🌿":"#EAF3DE","☕":"#FAEEDA","🍷":"#F1EFE8","🏍️":"#FAEEDA","⛪":"#E6F1FB","👑":"#E6F1FB","🎵":"#EEEDFE","🥐":"#FAEEDA","🍦":"#FAEEDA","🥩":"#FAEEDA","🥞":"#FAEEDA","🌯":"#FAEEDA","⛵":"#E6F1FB","🏃":"#EAF3DE","📸":"#FBEAF0","🎭":"#E6F1FB","🏬":"#FAEEDA","📚":"#EEEDFE","🌸":"#EEEDFE","🦆":"#FAEEDA","🍔":"#FAEEDA","🗼":"#E6F1FB","✈️":"#E1F5EE","🎪":"#FBEAF0","🎠":"#FBEAF0","🧁":"#FAEEDA","🎶":"#EEEDFE","🏊":"#EAF3DE","🎯":"#FBEAF0","🌃":"#E6F1FB"};
+let selIcon="🏛️",isImp=false,cur=0;
 
 const DAYS=[
 {d:30,m:"mayo",ti:"Llegada + Île de la Cité + Jazz medieval",su:"Primer sabor de París",items:[
-  {h:"Tarde",ic:"🏠",bg:"#E1F5EE",n:"Check-in Airbnb",de:"10 Rue des Eaux, 16e. Barrio residencial elegante, muy seguro. Mercado Passy a 3 min",cost:0,maps:"https://maps.app.goo.gl/uXT149wBYheij2Rz5",photos:"Rue des Eaux Paris 16"},
-  {h:"17h",ic:"🏛️",bg:"#E6F1FB",n:"Île de la Cité — Notre-Dame, Pont Neuf",de:"Corazón medieval de París. Fachada restaurada de Notre-Dame, Pont Neuf, Square du Vert-Galant",cost:0,maps:"https://maps.app.goo.gl/W8TJj9Y2nWJRrXH89",ticket:"Gratis",photos:"Notre Dame Paris 2024 restaurada"},
-  {h:"18:30h",ic:"🏛️",bg:"#E6F1FB",n:"Sainte-Chapelle",de:"Vidrieras góticas del s.XIII, las más antiguas de París. Reserva obligatoria online",cost:13,maps:"https://maps.app.goo.gl/M1vQqKzKWMF6bHAJ9",ticket:"https://www.sainte-chapelle.fr/",photos:"Sainte Chapelle vitraux interior Paris"},
-  {h:"20:30h",ic:"☕",bg:"#FAEEDA",n:"★ Café de Flore",de:"Sillas rojas desde 1887. Sartre, Beauvoir, Picasso bebían aquí. Chocolat chaud legendario",cost:35,maps:"https://maps.app.goo.gl/kzrgzYfBRq9U6zzQ6",photos:"Cafe de Flore Paris interior",imp:true},
-  {h:"22h",ic:"🎷",bg:"#F1EFE8",n:"★ Caveau de la Huchette — Bar jazz medieval",de:"Cueva del s.XIV, swing y bebop en vivo desde 1946. 5 Rue de la Huchette. Mazmorras reales",cost:15,maps:"https://maps.app.goo.gl/VVDVNGL5JT1NHFNT7",ticket:"https://www.caveaudelahuchette.fr/",photos:"Caveau de la Huchette jazz Paris swing",imp:true},
-],route:["Airbnb (Rue des Eaux)","→","RER C / Metro 6","→","Île de la Cité","→","Sainte-Chapelle","→","Café de Flore","→","Caveau Huchette"]},
+  {h:"Tarde",ic:"🏠",bg:"#E1F5EE",n:"Check-in Airbnb",de:"10 Rue des Eaux, 16e. Barrio Passy, muy seguro. Torre Eiffel a 10 min a pie",cost:0,maps:"https://www.google.com/maps/search/10+Rue+des+Eaux+75016+Paris",photos:"Passy Paris 16 arrondissement"},
+  {h:"17h",ic:"🏛️",bg:"#E6F1FB",n:"Île de la Cité — Notre-Dame, Pont Neuf",de:"Corazón medieval de París. Notre-Dame restaurada (2024), Pont Neuf, Square du Vert-Galant",cost:0,maps:"https://www.google.com/maps/search/Ile+de+la+Cite+Paris",ticket:"Gratis",photos:"Notre Dame Paris 2024 Pont Neuf"},
+  {h:"18:30h",ic:"🏛️",bg:"#E6F1FB",n:"Sainte-Chapelle",de:"Vidrieras góticas del s.XIII. Reserva obligatoria online",cost:13,maps:"https://www.google.com/maps/search/Sainte+Chapelle+Paris",ticket:"https://www.sainte-chapelle.fr/",photos:"Sainte Chapelle vitraux interior Paris"},
+  {h:"20:30h",ic:"☕",bg:"#FAEEDA",n:"★ Café de Flore",de:"Sillas rojas desde 1887. Sartre, Beauvoir, Picasso bebían aquí. Chocolat chaud legendario",cost:35,maps:"https://www.google.com/maps/search/Cafe+de+Flore+Paris",photos:"Cafe de Flore Paris interior",imp:true},
+  {h:"22h",ic:"🎷",bg:"#F1EFE8",n:"★ Bar Caveau de la Huchette — jazz medieval",de:"5 Rue de la Huchette. Cueva del s.XIV, swing en vivo desde 1946",cost:15,maps:"https://www.google.com/maps/search/Caveau+de+la+Huchette+Paris",ticket:"https://www.caveaudelahuchette.fr/",photos:"Caveau de la Huchette jazz Paris",imp:true},
+],route:["Airbnb","→","Metro 6 / RER C","→","Île de la Cité","→","Sainte-Chapelle","→","Café de Flore","→","Caveau Huchette"]},
 
 {d:31,m:"mayo",ti:"Montmartre completo",su:"Bohemia, vino natural, motos y jazz en cueva",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Stade Emile Anthoine — running",de:"Pista de atletismo a 5 min del Airbnb, junto al Champ de Mars. Gratis",cost:0,maps:"https://maps.app.goo.gl/Z3bA7RZ5v8Zz5XRWA",ticket:"Gratis",photos:"Stade Emile Anthoine Paris atletismo Champ de Mars"},
-  {h:"9:30h",ic:"🛍️",bg:"#EEEDFE",n:"Marché des Abbesses + desayuno",de:"Mercado local de Montmartre. Croissants, fruta, queso. El desayuno más auténtico del barrio",cost:8,maps:"https://maps.app.goo.gl/9Ffu5sXRNKUk5GNt7",photos:"Marche Abbesses Montmartre Paris mercado"},
-  {h:"10:30h",ic:"⛪",bg:"#E6F1FB",n:"Sacré-Cœur + vistas",de:"La cúpula blanca de Montmartre. Las mejores vistas de París desde la escalinata. Llega temprano",cost:0,maps:"https://maps.app.goo.gl/PoMadKKezWPF3wy16",ticket:"Gratis",photos:"Sacre Coeur Paris vistas escalinata"},
-  {h:"14h",ic:"🍷",bg:"#F1EFE8",n:"★ Les Caves Populaires",de:"22 Rue des Abbesses. Vinos naturales, 100% local. Sin turistas ni música fuerte. Llega cuando abre",cost:18,maps:"https://maps.app.goo.gl/7YUnbg5WJzT4mzBq7",photos:"Les Caves Populaires Montmartre bar vino",imp:true},
-  {h:"16h",ic:"🏍️",bg:"#FAEEDA",n:"★ Motors Coffee",de:"6 Rue Lepic. Café de especialidad con motos clásicas expuestas. El más cool de Montmartre",cost:6,maps:"https://maps.app.goo.gl/oCNSuMxLdDJWP7kn9",photos:"Motors Coffee Montmartre cafe motos Paris",imp:true},
-  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Le Relais Gascon",de:"Ensaladas enormes a buen precio. Ambiente joven y local sin reserva",cost:20,maps:"https://maps.app.goo.gl/XJpZVvPgz4kZ9TJSA",photos:"Le Relais Gascon Montmartre restaurante"},
-  {h:"22h",ic:"🎷",bg:"#F1EFE8",n:"★ Caveau des Oubliettes — cueva jazz s.XII",de:"52 Rue Galande. Jazz en mazmorras medievales reales. Solo consumición (~€10). Único en París",cost:10,maps:"https://maps.app.goo.gl/wnJL3Ydg1nYqKbkB9",photos:"Caveau des Oubliettes jazz Paris cueva medieval",imp:true},
-],route:["Airbnb","→","Metro 6 → Abbesses (L12)","→","Sacré-Cœur","→","Caves Populaires","→","Motors Coffee","→","Cena","→","Cueva Jazz"]},
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Stade Emile Anthoine — running",de:"Pista de atletismo a 5 min del Airbnb, junto al Champ de Mars. Gratis",cost:0,maps:"https://www.google.com/maps/search/Stade+Emile+Anthoine+Paris",ticket:"Gratis",photos:"Stade Emile Anthoine Paris atletismo"},
+  {h:"9:30h",ic:"🛍️",bg:"#EEEDFE",n:"Marché des Abbesses + desayuno",de:"Mercado local de Montmartre. Croissants, fruta, queso",cost:8,maps:"https://www.google.com/maps/search/Marche+Abbesses+Montmartre+Paris",photos:"Marche Abbesses Montmartre mercado"},
+  {h:"10:30h",ic:"⛪",bg:"#E6F1FB",n:"Sacré-Cœur + vistas",de:"La cúpula blanca de Montmartre. Las mejores vistas de París. Llega temprano",cost:0,maps:"https://www.google.com/maps/search/Sacre+Coeur+Paris",ticket:"Gratis",photos:"Sacre Coeur Paris vistas escalinata"},
+  {h:"14h",ic:"🍷",bg:"#F1EFE8",n:"★ Les Caves Populaires",de:"22 Rue des Abbesses. Vinos naturales, 100% local. Llega cuando abre",cost:18,maps:"https://www.google.com/maps/search/Les+Caves+Populaires+Paris",photos:"Les Caves Populaires Montmartre bar",imp:true},
+  {h:"16h",ic:"🏍️",bg:"#FAEEDA",n:"★ Motors Coffee",de:"6 Rue Lepic. Café de especialidad con motos clásicas expuestas",cost:6,maps:"https://www.google.com/maps/search/Motors+Coffee+Paris",photos:"Motors Coffee Montmartre cafe motos",imp:true},
+  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Le Relais Gascon — cena",de:"Ensaladas enormes a buen precio. Ambiente local sin reserva",cost:20,maps:"https://www.google.com/maps/search/Le+Relais+Gascon+Paris",photos:"Le Relais Gascon Montmartre"},
+  {h:"22h",ic:"🎷",bg:"#F1EFE8",n:"★ Caveau des Oubliettes — cueva jazz s.XII",de:"52 Rue Galande. Jazz en mazmorras medievales. Solo consumición (~€10)",cost:10,maps:"https://www.google.com/maps/search/Caveau+des+Oubliettes+Paris",photos:"Caveau des Oubliettes jazz Paris cueva",imp:true},
+],route:["Airbnb","→","Abbesses (L12)","→","Sacré-Cœur","→","Caves Populaires","→","Motors Coffee","→","Cena","→","Cueva Jazz"]},
 
-{d:1,m:"junio",ti:"Eje monumental + 59 Rivoli + Burger",su:"Louvre ext., Concorde, Arco, Galeries Lafayette, Vivienne",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Stade Emile Anthoine — running",de:"Pista junto al Champ de Mars, 5 min del Airbnb. La mejor forma de empezar el día",cost:0,maps:"https://maps.app.goo.gl/Z3bA7RZ5v8Zz5XRWA",ticket:"Gratis",photos:"Stade Emile Anthoine Paris mañana atletismo"},
-  {h:"9h",ic:"🏛️",bg:"#E6F1FB",n:"★ Louvre — exterior y pirámide",de:"Pirámide I.M. Pei + fachada más larga de Europa (480m). Todo gratis desde fuera. Arco del Carrusel incluido",cost:0,maps:"https://maps.app.goo.gl/YUYyhrZ2aRVHFmjg6",ticket:"Gratis",photos:"Louvre pyramide Paris exterior noche",imp:true},
-  {h:"10h",ic:"🌿",bg:"#EAF3DE",n:"★ Jardín de las Tullerías",de:"El jardín más clásico de París. Entre el Louvre y la Concorde. Estatuas, fuentes, el París atemporal",cost:0,maps:"https://maps.app.goo.gl/sHqg3Kn3u1ZSz37B8",ticket:"Gratis",photos:"Jardin des Tuileries Paris",imp:true},
-  {h:"11h",ic:"🏛️",bg:"#E6F1FB",n:"★ Plaza de la Concorde",de:"Obelisco de Luxor (3.300 años). Plaza más grande de París. Aquí estuvo la guillotina de Luis XVI y María Antonieta",cost:0,maps:"https://maps.app.goo.gl/7kkLqBFLBmE6gG5n6",ticket:"Gratis",photos:"Place de la Concorde obelisco Paris",imp:true},
-  {h:"12:30h",ic:"🏛️",bg:"#E6F1FB",n:"★ Champs-Élysées + Arco del Triunfo",de:"2km a pie de la Concorde al Arco. 167 escalones hasta la cima. Vistas de las 12 avenidas + Torre Eiffel",cost:13,maps:"https://maps.app.goo.gl/CmmzN7u5XLpkQEzC6",ticket:"https://www.paris-arc-de-triomphe.fr/",photos:"Arco Triunfo Paris cima vistas 12 avenidas",imp:true},
-  {h:"15h",ic:"🎨",bg:"#FBEAF0",n:"★ 59 Rivoli — arte squat",de:"59 Rue de Rivoli. 6 pisos de talleres de artistas abiertos. El lugar más original de París. GRATIS",cost:0,maps:"https://maps.app.goo.gl/5XFZKrwRtS5wVmUq7",ticket:"Gratis",photos:"59 Rivoli Paris artistas squat talleres",imp:true},
-  {h:"16:30h",ic:"🏬",bg:"#FAEEDA",n:"★ Terraza Galeries Lafayette — gratis",de:"40 Blvd Haussmann. Terraza del techo con vistas 360°: Sacré-Cœur, Torre Eiffel, Grands Boulevards. Sube al 7e piso",cost:0,maps:"https://maps.app.goo.gl/3pxVtaQaJsEtNaYr9",ticket:"Gratis",photos:"Galeries Lafayette terraza Paris vistas 360",imp:true},
-  {h:"18h",ic:"🏛️",bg:"#FBEAF0",n:"★ Galerie Vivienne",de:"4 Rue des Petits Champs. Pasaje cubierto más elegante de París (1823). Mosaicos, librerías antiguas, tiendas de lujo",cost:0,maps:"https://maps.app.goo.gl/vNLKXTDhBrMuwEg88",ticket:"Gratis",photos:"Galerie Vivienne Paris pasaje cubierto mosaicos",imp:true},
-  {h:"19:30h",ic:"☕",bg:"#FAEEDA",n:"★ Cotti — bebidas con la app",de:"Descarga la app. Promos increíbles. Varias sucursales en toda la ciudad",cost:4,maps:"https://www.google.com/maps/search/Cotti+Coffee+Paris",photos:"Cotti Coffee Paris",imp:true},
-  {h:"20:30h",ic:"🍔",bg:"#FAEEDA",n:"★ Mangez et Cassez-Vous — Burger Mofo",de:"27 Rue de Bretagne, Le Marais. Burgers de culto. Cola habitual pero vale",cost:18,maps:"https://maps.app.goo.gl/KhXh2k1xAFNtTsZS9",photos:"Mangez Cassez Vous burger Paris",imp:true},
-],route:["Airbnb","→","Louvre ext.","→","Tullerías","→","Concorde","→","Champs-Élysées","→","Arco Triunfo","→","59 Rivoli","→","Gal. Lafayette","→","Gal. Vivienne","→","Burger Mofo"]},
+{d:1,m:"junio",ti:"Eje monumental + 59 Rivoli + Lafayette + Vivienne",su:"Louvre ext., Concorde, Arco, Burger Mofo",items:[
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Stade Emile Anthoine",de:"Pista junto al Champ de Mars, 5 min del Airbnb",cost:0,maps:"https://www.google.com/maps/search/Stade+Emile+Anthoine+Paris",ticket:"Gratis",photos:"Stade Emile Anthoine Paris atletismo"},
+  {h:"9h",ic:"🏛️",bg:"#E6F1FB",n:"★ Louvre — exterior y pirámide I.M. Pei",de:"Pirámide de cristal + fachada más larga de Europa (480m). Todo gratis desde fuera",cost:0,maps:"https://www.google.com/maps/search/Louvre+Paris",ticket:"Gratis",photos:"Louvre pyramide Paris exterior",imp:true},
+  {h:"10h",ic:"🌿",bg:"#EAF3DE",n:"★ Jardín de las Tullerías",de:"Entre el Louvre y la Concorde. Estatuas, fuentes, el París más clásico",cost:0,maps:"https://www.google.com/maps/search/Jardin+des+Tuileries+Paris",ticket:"Gratis",photos:"Jardin des Tuileries Paris",imp:true},
+  {h:"11h",ic:"🏛️",bg:"#E6F1FB",n:"★ Plaza de la Concorde",de:"Obelisco de Luxor (3.300 años). La plaza más grande de París. Aquí estuvo la guillotina",cost:0,maps:"https://www.google.com/maps/search/Place+de+la+Concorde+Paris",ticket:"Gratis",photos:"Place de la Concorde obelisco Paris",imp:true},
+  {h:"12:30h",ic:"🏛️",bg:"#E6F1FB",n:"★ Champs-Élysées + Arco del Triunfo",de:"2km a pie. 167 escalones hasta la cima. Vistas de las 12 avenidas + Torre Eiffel",cost:13,maps:"https://www.google.com/maps/search/Arc+de+Triomphe+Paris",ticket:"https://www.paris-arc-de-triomphe.fr/",photos:"Arco Triunfo Paris cima vistas",imp:true},
+  {h:"15h",ic:"🎨",bg:"#FBEAF0",n:"★ 59 Rivoli — arte squat",de:"59 Rue de Rivoli. 6 pisos de talleres abiertos. Gratis. El más original de París",cost:0,maps:"https://www.google.com/maps/search/59+Rivoli+Paris",ticket:"Gratis",photos:"59 Rivoli Paris artistas squat",imp:true},
+  {h:"16:30h",ic:"🏬",bg:"#FAEEDA",n:"★ Terraza Galeries Lafayette — gratis",de:"40 Blvd Haussmann. 7e piso. Vistas 360°: Sacré-Cœur, Torre Eiffel, Grands Boulevards",cost:0,maps:"https://www.google.com/maps/search/Galeries+Lafayette+Paris+Haussmann",ticket:"Gratis",photos:"Galeries Lafayette terraza Paris vistas",imp:true},
+  {h:"18h",ic:"🏛️",bg:"#FBEAF0",n:"★ Galerie Vivienne",de:"4 Rue des Petits Champs. Pasaje cubierto más elegante de París (1823). Mosaicos, librerías",cost:0,maps:"https://www.google.com/maps/search/Galerie+Vivienne+Paris",ticket:"Gratis",photos:"Galerie Vivienne Paris pasaje cubierto",imp:true},
+  {h:"19:30h",ic:"☕",bg:"#FAEEDA",n:"★ Cotti — bebidas con la app",de:"Descarga la app antes. Promos increíbles en bebidas",cost:4,maps:"https://www.google.com/maps/search/Cotti+Coffee+Paris",photos:"Cotti Coffee Paris",imp:true},
+  {h:"20:30h",ic:"🍔",bg:"#FAEEDA",n:"★ Mangez et Cassez-Vous — Burger Mofo",de:"27 Rue de Bretagne, Le Marais. Burgers de culto. Cola habitual pero vale",cost:18,maps:"https://www.google.com/maps/search/Mangez+et+Cassez+Vous+Paris",photos:"Mangez et Cassez Vous burger Paris",imp:true},
+],route:["Airbnb","→","Louvre ext.","→","Tullerías","→","Concorde","→","Arco Triunfo","→","59 Rivoli","→","Lafayette","→","Vivienne","→","Burger Mofo"]},
 
 {d:2,m:"junio",ti:"Versalles día completo",su:"El palacio más grandioso de Europa",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Champ de Mars",de:"El jardín frente a la Torre Eiffel, 5 min del Airbnb. El running matinal más espectacular de París",cost:0,maps:"https://maps.app.goo.gl/rEemupUdwDfNthgb7",ticket:"Gratis",photos:"Champ de Mars Paris mañana running Torre Eiffel"},
-  {h:"8:30h",ic:"🚆",bg:"#E1F5EE",n:"RER C → Versailles",de:"40 min. Versailles-Château-Rive Gauche. Metro 6 → Invalides (10 min desde Airbnb)",cost:7,maps:"https://maps.app.goo.gl/QsFLuR9fCHv7rBjR6",photos:"RER C Paris Invalides"},
-  {h:"9:30h",ic:"👑",bg:"#E6F1FB",n:"★ Palacio de Versalles",de:"RESERVA YA. Salón de los Espejos (73m, 357 espejos). Capilla real, galería de batallas. Mínimo 3h",cost:21,maps:"https://maps.app.goo.gl/8V5jK5CZLn8PEFyf7",ticket:"https://www.chateauversailles.fr/",photos:"Palacio Versalles salon espejos jardines",imp:true},
-  {h:"12h",ic:"🌿",bg:"#EAF3DE",n:"Jardines de Le Nôtre",de:"800 hectáreas. Fuentes musicales los fines de semana. Gran Canal para remar. Picnic recomendado",cost:0,maps:"https://maps.app.goo.gl/nzG5cP9LwbbfHqts9",ticket:"Gratis",photos:"Jardines Versalles fuentes Le Notre"},
-  {h:"15h",ic:"🏡",bg:"#E6F1FB",n:"Petit Trianon + Hamlet de la Reina",de:"El refugio secreto de María Antonieta: aldea campestre artificial para escapar del protocolo real",cost:0,maps:"https://maps.app.goo.gl/mNgCRTkqPhMnPqJf8",ticket:"Incluido en pase",photos:"Petit Trianon Hamlet Reina Maria Antonieta"},
-  {h:"19h",ic:"🍽️",bg:"#FAEEDA",n:"Cena ligera de vuelta en París",de:"Bistró cerca del Airbnb. Llegarás cansado pero con un día memorable",cost:18,maps:"https://www.google.com/maps/search/bistrot+Paris+16",photos:"bistrot Paris"},
-],route:["Airbnb","→","Metro 6 → Invalides","→","RER C → Versailles","→","Palacio","→","Jardines","→","Petit Trianon","→","RER C → París"]},
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Champ de Mars",de:"El jardín frente a la Torre Eiffel, 5 min del Airbnb",cost:0,maps:"https://www.google.com/maps/search/Champ+de+Mars+Paris",ticket:"Gratis",photos:"Champ de Mars Paris Torre Eiffel running"},
+  {h:"8:30h",ic:"🚆",bg:"#E1F5EE",n:"RER C Invalides → Versailles",de:"40 min. Metro 6 → Invalides (10 min desde Airbnb)",cost:7,maps:"https://www.google.com/maps/search/Gare+Invalides+Paris",photos:"RER C Paris Versailles"},
+  {h:"9:30h",ic:"👑",bg:"#E6F1FB",n:"★ Palacio de Versalles",de:"RESERVA YA. Salón de los Espejos (357 espejos, 20.000 velas). Capilla real, galería de batallas",cost:21,maps:"https://www.google.com/maps/search/Chateau+de+Versailles",ticket:"https://www.chateauversailles.fr/",photos:"Palacio Versalles salon espejos jardines",imp:true},
+  {h:"12h",ic:"🌿",bg:"#EAF3DE",n:"Jardines de Le Nôtre",de:"800 hectáreas. Fuentes musicales los fines de semana. Picnic junto al Gran Canal",cost:0,maps:"https://www.google.com/maps/search/Jardins+de+Versailles",ticket:"Gratis",photos:"Jardines Versalles fuentes"},
+  {h:"15h",ic:"🏡",bg:"#E6F1FB",n:"Petit Trianon + Hamlet de la Reina",de:"El refugio secreto de María Antonieta. Incluido en el pase",cost:0,maps:"https://www.google.com/maps/search/Petit+Trianon+Versailles",ticket:"Incluido en pase",photos:"Petit Trianon Hamlet Reina"},
+  {h:"19h",ic:"🍽️",bg:"#FAEEDA",n:"Cena ligera cerca del Airbnb",de:"Bistró en el barrio Passy. Llegarás cansado pero feliz",cost:18,maps:"https://www.google.com/maps/search/bistrot+Paris+16+Passy",photos:"bistrot Paris 16 Passy"},
+],route:["Airbnb","→","Metro 6 → Invalides","→","RER C → Versailles","→","Palacio","→","Jardines","→","Petit Trianon","→","RER C vuelta"]},
 
 {d:3,m:"junio",ti:"Puces Saint-Ouen + Dior + Bouillon Chartier",su:"Mercado monumental, moda icónica y cena histórica",items:[
-  {h:"9:30h",ic:"🛍️",bg:"#EEEDFE",n:"★ Marché aux Puces de Saint-Ouen",de:"Metro Garibaldi (L13). 15 mercados en uno. Paul Bert (art déco), Vernaison (laberinto), Dauphine (discos). Regatea. Sáb-Dom-Lun",cost:0,maps:"https://maps.app.goo.gl/XFMK8bP2nhYkMHFU6",ticket:"Gratis entrar",photos:"Marche aux Puces Saint-Ouen Paris vintage antigüedades",imp:true},
-  {h:"13h",ic:"🎵",bg:"#FAEEDA",n:"Chez Louisette — almuerzo en las Puces",de:"Restaurante dentro del mercado con chanson française en vivo. Ambiente de película",cost:20,maps:"https://maps.app.goo.gl/dRwE5X7NKKJ1P3VG8",photos:"Chez Louisette restaurant Puces Saint-Ouen chanson"},
-  {h:"15h",ic:"👗",bg:"#FBEAF0",n:"★ Galerie Dior",de:"30 Av. Montaigne. 7 salas inmersivas: vestidos originales, archivo perfumes, bocetos, sala Dalí-Dior",cost:12,maps:"https://maps.app.goo.gl/QcNBvzKxBKHRGmkp6",ticket:"https://www.galeriedior.com/",photos:"Galerie Dior Paris museo moda inmersivo salas",imp:true},
-  {h:"17h",ic:"🏛️",bg:"#E6F1FB",n:"Le Marais + Place des Vosges",de:"La plaza más antigua de París (1612). Galerías de arte gratis en los soportales",cost:0,maps:"https://maps.app.goo.gl/TF8kmD3tgJa8eFUJ6",ticket:"Gratis",photos:"Place des Vosges Le Marais Paris"},
-  {h:"19:30h",ic:"🍽️",bg:"#FAEEDA",n:"★ Bouillon Chartier — 3 tiempos con desconocidos",de:"7 Rue du Fbg Montmartre. Menú 3 tiempos desde €16. Mesas compartidas en salón art nouveau de 1896. Sin reserva — cola en puerta",cost:16,maps:"https://maps.app.goo.gl/VW7wQXEtXnmZh5jx5",ticket:"Sin reserva",photos:"Bouillon Chartier Paris restaurant art nouveau interior",imp:true},
-  {h:"21:30h",ic:"🍽️",bg:"#FAEEDA",n:"Cena con amigos",de:"Septime · Bastille o Le Servan · 11e. Reserva con mucha antelación si eliges Septime",cost:45,maps:"https://maps.app.goo.gl/gK2WmYdMrFAf7tNz9",photos:"Septime restaurant Paris"},
-],route:["Airbnb","→","Metro → Garibaldi (L13)","→","Puces Saint-Ouen","→","Galerie Dior (L9)","→","Le Marais","→","Bouillon Chartier","→","Cena amigos"]},
+  {h:"9:30h",ic:"🛍️",bg:"#EEEDFE",n:"★ Marché aux Puces de Saint-Ouen",de:"Metro Garibaldi (L13). 15 mercados en uno. Paul Bert (art déco), Vernaison, Dauphine (discos). Regatea",cost:0,maps:"https://www.google.com/maps/search/Marche+aux+Puces+Saint+Ouen+Paris",ticket:"Gratis",photos:"Marche aux Puces Saint-Ouen Paris vintage",imp:true},
+  {h:"13h",ic:"🎵",bg:"#FAEEDA",n:"Chez Louisette — almuerzo en las Puces",de:"Chanson française en vivo dentro del mercado. Ambiente de película",cost:20,maps:"https://www.google.com/maps/search/Chez+Louisette+Saint+Ouen",photos:"Chez Louisette chanson francaise restaurant"},
+  {h:"15h",ic:"👗",bg:"#FBEAF0",n:"★ Galerie Dior",de:"30 Av. Montaigne. 7 salas inmersivas: vestidos originales, archivo perfumes, sala Dalí-Dior",cost:12,maps:"https://www.google.com/maps/search/Galerie+Dior+Avenue+Montaigne+Paris",ticket:"https://www.galeriedior.com/",photos:"Galerie Dior Paris museo moda",imp:true},
+  {h:"17h",ic:"🏛️",bg:"#E6F1FB",n:"Le Marais + Place des Vosges",de:"La plaza más antigua de París (1612). Galerías de arte gratis en los soportales",cost:0,maps:"https://www.google.com/maps/search/Place+des+Vosges+Paris",ticket:"Gratis",photos:"Place des Vosges Le Marais Paris"},
+  {h:"19:30h",ic:"🍽️",bg:"#FAEEDA",n:"★ Bouillon Chartier — 3 tiempos con desconocidos",de:"7 Rue du Faubourg Montmartre. Menú 3 tiempos desde €16. Mesas compartidas en salón art nouveau de 1896. Sin reserva",cost:16,maps:"https://www.google.com/maps/search/Bouillon+Chartier+Paris",ticket:"Sin reserva — cola en puerta",photos:"Bouillon Chartier Paris art nouveau interior",imp:true},
+  {h:"21:30h",ic:"🍽️",bg:"#FAEEDA",n:"Cena con amigos",de:"Septime (Bastille) o Le Servan (11e). Reserva con antelación",cost:45,maps:"https://www.google.com/maps/search/Septime+Paris",photos:"Septime Paris restaurant"},
+],route:["Airbnb","→","Garibaldi (L13)","→","Puces Saint-Ouen","→","Galerie Dior (L9)","→","Le Marais","→","Bouillon Chartier","→","Cena amigos"]},
 
-{d:4,m:"junio",sp:true,spic:"💍",spti:"Día de boda",spsu:"Día reservado — ¡que sea increíble!"},
-{d:5,m:"junio",sp:true,spic:"🎉",spti:"Evento con amigos",spsu:"Día reservado para el evento"},
+// DÍA 4 — con cena con los novios
+{d:4,m:"junio",dia4:true},
 
-{d:6,m:"junio",ti:"Saint-Germain + flores + helados + noche local",su:"Café de Flore, Flower Market, Berthillon, Bar Fleuri, Les Canards",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Trocadéro + orilla del Sena",de:"Desde el Airbnb: Trocadéro → Sena → Torre Eiffel → vuelta. 5-8km de los más hermosos del mundo",cost:0,maps:"https://maps.app.goo.gl/kBRnRgDGSAEMCEFr7",ticket:"Gratis",photos:"Trocadero Paris Sena running mañana Torre Eiffel"},
-  {h:"9:30h",ic:"☕",bg:"#FAEEDA",n:"★ Café de Flore — desayuno histórico",de:"172 Blvd Saint-Germain. Chocolat chaud legendario. El desayuno más parisino posible",cost:14,maps:"https://maps.app.goo.gl/kzrgzYfBRq9U6zzQ6",photos:"Cafe de Flore Paris desayuno chocolat chaud",imp:true},
-  {h:"11h",ic:"🌸",bg:"#EEEDFE",n:"★ Marché aux Fleurs — Île de la Cité",de:"Place Louis Lépine. Desde 1808. Arcos de hierro del s.XIX, orquídeas raras, bonsáis. Sábados también hay pájaros",cost:0,maps:"https://maps.app.goo.gl/W8TJj9Y2nWJRrXH89",ticket:"Gratis",photos:"Marche aux Fleurs Paris Ile de la Cite flores",imp:true},
-  {h:"13h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — mejores helados de París",de:"31 Rue Saint-Louis en l'Île. Desde 1954. 4 sucursales en la isla. Caramel beurre salé, framboise, violette",cost:6,maps:"https://maps.app.goo.gl/NGExrGQXqHKSh5Rx8",photos:"Berthillon glaces helados Paris Ile Saint-Louis",imp:true},
-  {h:"14:30h",ic:"🌿",bg:"#EAF3DE",n:"Jardín de Luxemburgo",de:"El parque más elegante de París. Sillas de metal, fuente central, jugadores de petanque",cost:0,maps:"https://maps.app.goo.gl/q7LyBsTmKXqSKpLg8",ticket:"Gratis",photos:"Jardin du Luxembourg Paris"},
-  {h:"16h",ic:"📚",bg:"#EEEDFE",n:"Bouquinistas del Sena",de:"3km de cajones verdes junto al río. Libros, posters, antigüedades. Gratis y pintoresco",cost:0,maps:"https://maps.app.goo.gl/XN5bHk8JVmh4fRX97",ticket:"Gratis",photos:"Bouquinistas Sena Paris libros cajones verdes"},
-  {h:"20h",ic:"🍗",bg:"#FAEEDA",n:"★ Le Bar Fleuri — pollo con papas",de:"El pollo asado más querido de París. Bistró de barrio auténtico. El secreto de los locales",cost:22,maps:"https://www.google.com/maps/search/Le+Bar+Fleuri+Paris",photos:"Le Bar Fleuri Paris pollo papas bistro",imp:true},
-  {h:"22h",ic:"🦆",bg:"#FAEEDA",n:"★ Les Canards de Paris",de:"Magret de pato en múltiples preparaciones. Ambiente íntimo y muy parisino. Secreto local",cost:30,maps:"https://www.google.com/maps/search/Les+Canards+de+Paris",photos:"Les Canards de Paris restaurant magret pato",imp:true},
-],route:["Airbnb","→","Metro → Saint-Germain (Odéon)","→","Café de Flore","→","Flower Market (Cité)","→","Berthillon","→","Luxemburgo","→","Bouquinistas","→","Bar Fleuri"]},
+// DÍA 5 — boda
+{d:5,m:"junio",boda:true,spti:"Le Programme — Boda",spsu:"5 juin 2026",
+ civil:{
+   name:"Cérémonie Civile",
+   place:"Mairie du 15ᵉ arrondissement de Paris",
+   addr:"31 Rue Péclet, 75015 Paris",
+   time:"Vendredi 5 juin à 16h00",
+   note:"Merci d'arriver quelques minutes à l'avance afin de faciliter l'organisation et l'entrée en salle.",
+   maps:"https://www.google.com/maps/search/31+Rue+Peclet+75015+Paris",
+   waze:"https://waze.com/ul?q=31+Rue+Peclet+75015+Paris"
+ },
+ recep:{
+   name:"Réception & Soirée",
+   place:"L'île",
+   addr:"Parc de l'Ile Saint-Germain\n170 Quai de Stalingrad\n92130 Issy-les-Moulineaux",
+   time:"À partir de 19h00",
+   maps:"https://www.google.com/maps/search/170+Quai+de+Stalingrad+92130+Issy-les-Moulineaux",
+   waze:"https://waze.com/ul?q=170+Quai+de+Stalingrad+92130+Issy-les-Moulineaux"
+ }
+},
 
-{d:7,m:"junio",ti:"Orsay + Torre Eiffel de noche + Barco + Quai Branly",su:"El día más icónico — RESERVA TODO YA",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Torre Eiffel al amanecer",de:"10 min a pie del Airbnb. La Torre al amanecer sin turistas es una de las imágenes más hermosas de París",cost:0,maps:"https://maps.app.goo.gl/puhNTXMiapHZxpLk7",ticket:"Gratis",photos:"Torre Eiffel amanecer Paris sin turistas"},
-  {h:"9:30h",ic:"🎨",bg:"#FBEAF0",n:"★ Musée d'Orsay",de:"1 Rue de la Légion d'Honneur. Van Gogh, Monet, Renoir, Degas en estación de tren de 1900. RESERVA ONLINE",cost:16,maps:"https://maps.app.goo.gl/ys7H3YSBBZ3GKJQP9",ticket:"https://www.musee-orsay.fr/",photos:"Musee d Orsay Paris interior Van Gogh Monet",imp:true},
-  {h:"12:30h",ic:"🍽️",bg:"#FAEEDA",n:"Café Campana — dentro del Orsay",de:"Almuerzo bajo el reloj monumental. Una experiencia visual única en el mundo",cost:22,maps:"https://maps.app.goo.gl/ys7H3YSBBZ3GKJQP9",photos:"Cafe Campana Orsay reloj restaurante"},
-  {h:"14h",ic:"🎨",bg:"#FBEAF0",n:"★ Musée du Quai Branly",de:"37 Quai Branly. Arte indígena de África, Asia, Oceanía y América. Jardín vertical de Patrick Blanc. Muy cerca del Airbnb",cost:14,maps:"https://maps.app.goo.gl/vkBrAFJEiZnSBjmE9",ticket:"https://www.quaibranly.fr/",photos:"Musee Quai Branly Paris jardin vertical Jean Nouvel",imp:true},
-  {h:"16h",ic:"⛵",bg:"#E6F1FB",n:"★ Bateaux Mouches — paseo en barco",de:"Pont de l'Alma. 1h10 por el Sena al atardecer. Notre-Dame, Louvre, Orsay, Torre Eiffel, Pont Alexandre III",cost:17,maps:"https://maps.app.goo.gl/1AxJXRZWp12dJc4n8",ticket:"https://www.bateaux-mouches.fr/",photos:"Bateaux Mouches Sena Paris atardecer crucero",imp:true},
-  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Au Bon Accueil — cena con vista Torre",de:"3 Rue de Monttessuy. Vista directa a la Torre. Menú prix-fixe. Reserva imprescindible",cost:38,maps:"https://maps.app.goo.gl/VnKqGstVpYE9FzUA9",photos:"Au Bon Accueil Paris Torre Eiffel vista"},
-  {h:"22h",ic:"🗼",bg:"#E6F1FB",n:"★ Torre Eiffel de NOCHE — subida",de:"RESERVA EN eiffel-tower.com YA. París iluminada a 276m. Show de luces cada hora en punto. De noche es otro mundo",cost:29,maps:"https://maps.app.goo.gl/puhNTXMiapHZxpLk7",ticket:"https://www.toureiffel.paris/",photos:"Torre Eiffel noche Paris iluminada subida cima",imp:true},
-],route:["Airbnb","→","RER C → Orsay","→","Quai Branly (a pie)","→","Bateaux Mouches (Alma)","→","Cena","→","Torre Eiffel de noche"]},
+{d:6,m:"junio",ti:"Saint-Germain + flores + helados + noche local",su:"Café de Flore, Flower Market, Berthillon, Bar Fleuri",items:[
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Trocadéro + Sena",de:"Desde el Airbnb: Trocadéro → Sena → Torre Eiffel → vuelta. 5-8km espectaculares",cost:0,maps:"https://www.google.com/maps/search/Trocadero+Paris",ticket:"Gratis",photos:"Trocadero Paris Sena running Torre Eiffel"},
+  {h:"9:30h",ic:"☕",bg:"#FAEEDA",n:"★ Café de Flore — desayuno histórico",de:"Chocolat chaud legendario. Sillas rojas de 1887. El desayuno más parisino",cost:14,maps:"https://www.google.com/maps/search/Cafe+de+Flore+Paris",photos:"Cafe de Flore Paris desayuno",imp:true},
+  {h:"11h",ic:"🌸",bg:"#EEEDFE",n:"★ Marché aux Fleurs — Île de la Cité",de:"Desde 1808. Arcos de hierro del s.XIX, orquídeas raras, bonsáis. Sábados también hay pájaros",cost:0,maps:"https://www.google.com/maps/search/Marche+aux+Fleurs+Ile+de+la+Cite+Paris",ticket:"Gratis",photos:"Marche aux Fleurs Paris Ile de la Cite",imp:true},
+  {h:"13h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — mejores helados de París",de:"31 Rue Saint-Louis en l'Île. Desde 1954. Caramel beurre salé, framboise, violette",cost:6,maps:"https://www.google.com/maps/search/Berthillon+Paris",photos:"Berthillon glaces helados Paris Ile Saint-Louis",imp:true},
+  {h:"14:30h",ic:"🌿",bg:"#EAF3DE",n:"Jardín de Luxemburgo",de:"El parque más elegante de París. Sillas de metal, fuente, petanque",cost:0,maps:"https://www.google.com/maps/search/Jardin+du+Luxembourg+Paris",ticket:"Gratis",photos:"Jardin du Luxembourg Paris"},
+  {h:"16h",ic:"📚",bg:"#EEEDFE",n:"Bouquinistas del Sena",de:"3km de cajones verdes junto al río. Libros, posters, antigüedades",cost:0,maps:"https://www.google.com/maps/search/Bouquinistes+Seine+Paris",ticket:"Gratis",photos:"Bouquinistas Sena Paris libros"},
+  {h:"20h",ic:"🍗",bg:"#FAEEDA",n:"★ Le Bar Fleuri — pollo con papas",de:"El pollo asado más querido de París. El secreto mejor guardado de los locales",cost:22,maps:"https://www.google.com/maps/search/Le+Bar+Fleuri+Paris",photos:"Le Bar Fleuri Paris pollo bistro",imp:true},
+  {h:"22h",ic:"🦆",bg:"#FAEEDA",n:"★ Les Canards de Paris",de:"Magret de pato en múltiples preparaciones. Ambiente íntimo y parisino",cost:30,maps:"https://www.google.com/maps/search/Les+Canards+de+Paris",photos:"Les Canards de Paris restaurant pato",imp:true},
+],route:["Airbnb","→","Odéon (Metro)","→","Café de Flore","→","Flower Market","→","Berthillon","→","Luxemburgo","→","Bouquinistas","→","Bar Fleuri"]},
+
+{d:7,m:"junio",ti:"Orsay + Torre Eiffel de noche + Barco + Quai Branly",su:"El día más icónico — RESERVA TODO HOY",items:[
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Torre Eiffel al amanecer",de:"10 min a pie del Airbnb. La Torre al amanecer sin turistas es magia pura",cost:0,maps:"https://www.google.com/maps/search/Champ+de+Mars+Paris",ticket:"Gratis",photos:"Torre Eiffel amanecer Paris sin turistas"},
+  {h:"9:30h",ic:"🎨",bg:"#FBEAF0",n:"★ Musée d'Orsay",de:"Van Gogh, Monet, Renoir, Degas en una estación de tren de 1900. RESERVA ONLINE",cost:16,maps:"https://www.google.com/maps/search/Musee+d+Orsay+Paris",ticket:"https://www.musee-orsay.fr/",photos:"Musee d Orsay Paris interior",imp:true},
+  {h:"12:30h",ic:"🍽️",bg:"#FAEEDA",n:"Café Campana — dentro del Orsay",de:"Almuerzo bajo el reloj monumental de la estación. Vista única",cost:22,maps:"https://www.google.com/maps/search/Musee+d+Orsay+Paris",photos:"Cafe Campana Orsay reloj restaurante"},
+  {h:"14h",ic:"🎨",bg:"#FBEAF0",n:"★ Musée du Quai Branly",de:"37 Quai Branly. Arte indígena de África, Asia, Oceanía y América. Jardín vertical de Patrick Blanc",cost:14,maps:"https://www.google.com/maps/search/Musee+Quai+Branly+Paris",ticket:"https://www.quaibranly.fr/",photos:"Musee Quai Branly Paris jardin vertical",imp:true},
+  {h:"16h",ic:"⛵",bg:"#E6F1FB",n:"★ Bateaux Mouches — paseo en barco",de:"Pont de l'Alma. 1h10 por el Sena al atardecer. Notre-Dame, Louvre, Orsay, Torre Eiffel",cost:17,maps:"https://www.google.com/maps/search/Bateaux+Mouches+Paris",ticket:"https://www.bateaux-mouches.fr/",photos:"Bateaux Mouches Sena Paris atardecer",imp:true},
+  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Au Bon Accueil — cena vista Torre",de:"3 Rue de Monttessuy. Vista directa a la Torre. Reserva imprescindible",cost:38,maps:"https://www.google.com/maps/search/Au+Bon+Accueil+Paris",photos:"Au Bon Accueil Paris Torre Eiffel vista"},
+  {h:"22h",ic:"🗼",bg:"#E6F1FB",n:"★ Torre Eiffel de NOCHE — subida",de:"RESERVA EN eiffel-tower.com YA. París iluminada a 276m. Show de luces cada hora en punto",cost:29,maps:"https://www.google.com/maps/search/Tour+Eiffel+Paris",ticket:"https://www.toureiffel.paris/",photos:"Torre Eiffel noche Paris iluminada subida",imp:true},
+],route:["Airbnb","→","RER C → Orsay","→","Quai Branly","→","Bateaux Mouches","→","Cena","→","Torre Eiffel noche"]},
 
 {d:8,m:"junio",ti:"Buttes-Chaumont + Canal + Philharmonie + Malak",su:"El París local, la música y comer barato bien",items:[
-  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Stade Emile Anthoine — running",de:"La pista de atletismo más céntrica de París. 5 min del Airbnb. Gratis",cost:0,maps:"https://maps.app.goo.gl/Z3bA7RZ5v8Zz5XRWA",ticket:"Gratis",photos:"Stade Emile Anthoine Paris Champ de Mars atletismo"},
-  {h:"9h",ic:"🌿",bg:"#EAF3DE",n:"★ Parc des Buttes-Chaumont",de:"1 Rue Botzaris. Lago con isla rocosa de 50m, templete griego, acantilados, cascada. Vistas de Montmartre. Metro Buttes Chaumont",cost:0,maps:"https://maps.app.goo.gl/s9VV3KUt7VRQDB2C6",ticket:"Gratis",photos:"Parc Buttes Chaumont Paris lago isla templete griego",imp:true},
-  {h:"11h",ic:"🛶",bg:"#EAF3DE",n:"Canal Saint-Martin",de:"Quai de Valmy. Esclusas de hierro s.XIX, puentes levadizos, cafés de terraza. El canal más cool de París",cost:0,maps:"https://maps.app.goo.gl/ZCkGXeJLYVfJBqsf7",ticket:"Gratis",photos:"Canal Saint-Martin Paris esclusas puentes"},
-  {h:"13h",ic:"🎵",bg:"#EEEDFE",n:"★ Philharmonie de Paris",de:"221 Av. Jean Jaurès. Arquitectura de Jean Nouvel: 340.000 placas de aluminio. Ver agenda de conciertos. Exterior gratis",cost:0,maps:"https://maps.app.goo.gl/tbzH39SYarBrGqHA7",ticket:"https://philharmoniedeparis.fr/",photos:"Philharmonie de Paris arquitectura Jean Nouvel exterior",imp:true},
-  {h:"14:30h",ic:"🌯",bg:"#FAEEDA",n:"★ Malak Al Tawouk — comer barato",de:"Pollo libanés, wraps y hummus a precios increíbles. El secreto de los parisinos para comer bien y barato",cost:8,maps:"https://www.google.com/maps/search/Malak+Al+Tawouk+Paris",photos:"Malak Al Tawouk Paris pollo libanes wrap",imp:true},
-  {h:"16h",ic:"🎨",bg:"#FBEAF0",n:"Belleville — street art + mirador",de:"Rue Dénoyez. Murales gigantes. Mirador del Parc de Belleville: vistas sobre toda la ciudad. Gratis",cost:0,maps:"https://maps.app.goo.gl/fqEVvHSYdmRgRQ9V8",ticket:"Gratis",photos:"Belleville Paris street art murales mirador"},
-  {h:"18h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — segunda visita",de:"O Amorino en Le Marais (gelato en forma de flor, estilo italiano)",cost:6,maps:"https://maps.app.goo.gl/NGExrGQXqHKSh5Rx8",photos:"Berthillon helados Paris segunda visita",imp:true},
-  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Bistrot Paul Bert",de:"18 Rue Paul Bert, 11e. El bistró más honesto de París. Reserva recomendada",cost:35,maps:"https://maps.app.goo.gl/1UJZs2vgUQqrFXeZ9",photos:"Bistrot Paul Bert Paris"},
-],route:["Airbnb","→","Metro → Buttes-Chaumont (L7b)","→","Canal Saint-Martin","→","Philharmonie","→","Malak Al Tawouk","→","Belleville","→","Berthillon","→","Cena 11e"]},
+  {h:"7h",ic:"🏃",bg:"#EAF3DE",n:"Running — Stade Emile Anthoine",de:"5 min del Airbnb. La pista más céntrica de París",cost:0,maps:"https://www.google.com/maps/search/Stade+Emile+Anthoine+Paris",ticket:"Gratis",photos:"Stade Emile Anthoine Paris atletismo"},
+  {h:"9h",ic:"🌿",bg:"#EAF3DE",n:"★ Parc des Buttes-Chaumont",de:"Lago con isla de 50m, templete griego, acantilados, cascada. Vistas de Montmartre. Metro Buttes Chaumont",cost:0,maps:"https://www.google.com/maps/search/Parc+des+Buttes+Chaumont+Paris",ticket:"Gratis",photos:"Parc Buttes Chaumont Paris lago isla templete",imp:true},
+  {h:"11h",ic:"🛶",bg:"#EAF3DE",n:"Canal Saint-Martin",de:"Esclusas de hierro del s.XIX, puentes levadizos, cafés de terraza",cost:0,maps:"https://www.google.com/maps/search/Canal+Saint-Martin+Paris",ticket:"Gratis",photos:"Canal Saint-Martin Paris esclusas"},
+  {h:"13h",ic:"🎵",bg:"#EEEDFE",n:"★ Philharmonie de Paris",de:"221 Av. Jean Jaurès. Arquitectura de Jean Nouvel: 340.000 placas de aluminio. Exterior gratis",cost:0,maps:"https://www.google.com/maps/search/Philharmonie+de+Paris",ticket:"https://philharmoniedeparis.fr/",photos:"Philharmonie de Paris Jean Nouvel arquitectura",imp:true},
+  {h:"14:30h",ic:"🌯",bg:"#FAEEDA",n:"★ Malak Al Tawouk — comer barato",de:"Pollo libanés, wraps y hummus a precios increíbles. El secreto de los parisinos",cost:8,maps:"https://www.google.com/maps/search/Malak+Al+Tawouk+Paris",photos:"Malak Al Tawouk Paris pollo libanes",imp:true},
+  {h:"16h",ic:"🎨",bg:"#FBEAF0",n:"Belleville — street art + mirador",de:"Murales gigantes. Mirador del Parc de Belleville con vistas panorámicas. Gratis",cost:0,maps:"https://www.google.com/maps/search/Belleville+Paris+street+art",ticket:"Gratis",photos:"Belleville Paris street art mirador"},
+  {h:"18h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — segunda visita",de:"O Amorino en Le Marais (gelato en forma de flor)",cost:6,maps:"https://www.google.com/maps/search/Berthillon+Paris",photos:"Berthillon helados Paris",imp:true},
+  {h:"20:30h",ic:"🍽️",bg:"#FAEEDA",n:"Bistrot Paul Bert",de:"18 Rue Paul Bert, 11e. El bistró más honesto de París. Reserva recomendada",cost:35,maps:"https://www.google.com/maps/search/Bistrot+Paul+Bert+Paris",photos:"Bistrot Paul Bert Paris bistro"},
+],route:["Airbnb","→","Buttes-Chaumont (L7b)","→","Canal Saint-Martin","→","Philharmonie","→","Malak Al Tawouk","→","Belleville","→","Berthillon","→","Cena 11e"]},
 
-{d:9,m:"junio",ti:"Marché d'Aligre + Museos + Arts Forains + L'Entrecôte",su:"El mejor mercado local, museos clave y la carne más famosa",items:[
-  {h:"9h",ic:"🛍️",bg:"#EEEDFE",n:"★ Marché d'Aligre — IMPRESCINDIBLE",de:"Place d'Aligre, 12e. El más auténtico y barato de París. Frutas exóticas, quesos de granja, especias, ropa vintage. Todos los días hasta las 13h. Sin turistas",cost:0,maps:"https://maps.app.goo.gl/8CWPBuP9VFymyYLW7",ticket:"Gratis",photos:"Marché d Aligre Paris mercado local frutas quesos",imp:true},
-  {h:"11:30h",ic:"🎨",bg:"#FBEAF0",n:"★ Palais de Tokyo",de:"13 Av. du Président Wilson. Mayor museo de arte contemporáneo de Europa. Arquitectura brutalista 1937. Muy cerca del Airbnb",cost:14,maps:"https://maps.app.goo.gl/zDumRbqtqXJoXPhv9",ticket:"https://www.palaisdetokyo.com/",photos:"Palais de Tokyo Paris arte contemporaneo interior",imp:true},
-  {h:"14h",ic:"🎠",bg:"#FBEAF0",n:"★ Musée des Arts Forains",de:"53 Av. des Terroirs de France. Atracciones de feria del s.XIX-XX, carruseles reales, ópticas antiguas. El museo más mágico de París. RESERVA OBLIGATORIA",cost:18,maps:"https://maps.app.goo.gl/vCuNr1mj6aFJh4au5",ticket:"https://arts-forains.com/",photos:"Musee Arts Forains Paris carrusel vintage feria",imp:true},
-  {h:"17h",ic:"🪦",bg:"#E6F1FB",n:"Père Lachaise",de:"16 Rue du Repos. Piaf, Morrison, Wilde, Chopin, Proust. El cementerio más visitado del mundo. Mapa en la entrada",cost:0,maps:"https://maps.app.goo.gl/7xR8BCF4AvvdC3Mz8",ticket:"Gratis",photos:"Pere Lachaise Paris Oscar Wilde Jim Morrison tumba"},
-  {h:"20h",ic:"🥩",bg:"#FAEEDA",n:"★ L'Entrecôte de Paris",de:"Carne más famosa de París. Menú único: ensalada + entrecôte con salsa secreta + papas + postre. Precio fijo. Sin reserva — cola en puerta",cost:35,maps:"https://maps.app.goo.gl/dtE5J9UiJcM9VDd3A",ticket:"Sin reserva — llega temprano",photos:"L'Entrecote de Paris carne entrecote salsa secreta",imp:true},
-],route:["Airbnb","→","Metro → Marché d'Aligre (Ledru-Rollin)","→","Palais de Tokyo (Iéna L9)","→","Arts Forains","→","Père Lachaise","→","L'Entrecôte"]},
+{d:9,m:"junio",ti:"Marché d'Aligre + Museos + Arts Forains + L'Entrecôte",su:"El mejor mercado local, museos únicos y la carne más famosa",items:[
+  {h:"9h",ic:"🛍️",bg:"#EEEDFE",n:"★ Marché d'Aligre — IMPRESCINDIBLE",de:"Place d'Aligre, 12e. El más auténtico y barato de París. Sin turistas. Hasta las 13h",cost:0,maps:"https://www.google.com/maps/search/Marche+d+Aligre+Paris",ticket:"Gratis",photos:"Marche d Aligre Paris mercado local frutas",imp:true},
+  {h:"11:30h",ic:"🎨",bg:"#FBEAF0",n:"★ Palais de Tokyo",de:"13 Av. du Président Wilson. Mayor museo de arte contemporáneo de Europa. Cerca del Airbnb",cost:14,maps:"https://www.google.com/maps/search/Palais+de+Tokyo+Paris",ticket:"https://www.palaisdetokyo.com/",photos:"Palais de Tokyo Paris arte contemporaneo",imp:true},
+  {h:"14h",ic:"🎠",bg:"#FBEAF0",n:"★ Musée des Arts Forains",de:"53 Av. des Terroirs de France. Carruseles del s.XIX, feria vintage. El más mágico de París. RESERVA OBLIGATORIA",cost:18,maps:"https://www.google.com/maps/search/Musee+des+Arts+Forains+Paris+Bercy",ticket:"https://arts-forains.com/",photos:"Musee Arts Forains Paris carrusel vintage",imp:true},
+  {h:"17h",ic:"🪦",bg:"#E6F1FB",n:"Père Lachaise",de:"Piaf, Morrison, Wilde, Chopin, Proust. El cementerio más visitado del mundo",cost:0,maps:"https://www.google.com/maps/search/Pere+Lachaise+Paris",ticket:"Gratis",photos:"Pere Lachaise Paris Oscar Wilde Morrison"},
+  {h:"20h",ic:"🥩",bg:"#FAEEDA",n:"★ L'Entrecôte de Paris",de:"Menú único: ensalada + entrecôte con salsa secreta + papas + postre. Sin reserva — cola en la puerta",cost:35,maps:"https://www.google.com/maps/search/L+Entrecote+de+Paris",ticket:"Sin reserva — llega antes de abrir",photos:"L Entrecote de Paris carne salsa secreta",imp:true},
+],route:["Airbnb","→","Marché d'Aligre (Ledru-Rollin)","→","Palais de Tokyo (Iéna L9)","→","Arts Forains (Bercy)","→","Père Lachaise","→","L'Entrecôte"]},
 
-{d:10,m:"junio",ti:"Último día — Sagrado Corazón al atardecer",su:"Rue Mouffetard, crepas, Berthillon y despedida perfecta",items:[
-  {h:"9h",ic:"🛍️",bg:"#EEEDFE",n:"Rue Mouffetard — desayuno de mercado",de:"La calle de mercado más pintoresca de París. Quesos, panes artesanales, embutidos. Souvenirs auténticos aquí",cost:10,maps:"https://maps.app.goo.gl/2JJ2vBr1Yq3GqLFd7",ticket:"Gratis",photos:"Rue Mouffetard Paris mercado mañana pintoresco"},
-  {h:"10:30h",ic:"🏛️",bg:"#E6F1FB",n:"Panteón",de:"Place du Panthéon. Voltaire, Rousseau, Marie Curie, Zola. Vista 360° desde la cúpula",cost:13,maps:"https://maps.app.goo.gl/bVfNhpPdQPEUUfLQ9",ticket:"https://www.paris-pantheon.fr/",photos:"Pantheon Paris cupula interior Marie Curie"},
-  {h:"13h",ic:"🥞",bg:"#FAEEDA",n:"★ Crepería Oroyona — la más barata de París",de:"36 Rue Mouffetard. Crêpes y galettes artesanales a precios de barrio. La favorita de los estudiantes del Quartier Latin",cost:7,maps:"https://maps.app.goo.gl/sefMVEDt2cHnZRgp6",ticket:"Sin reserva",photos:"Creperie Mouffetard Paris galette crepe barata",imp:true},
-  {h:"15h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — último helado del viaje",de:"El cierre más dulce posible. El último sabor de París",cost:6,maps:"https://maps.app.goo.gl/NGExrGQXqHKSh5Rx8",photos:"Berthillon Paris ultimo helado viaje",imp:true},
-  {h:"18h",ic:"⛪",bg:"#E6F1FB",n:"★ Atardecer en la Basílica del Sagrado Corazón",de:"Las escalinatas de Montmartre al atardecer. Los últimos rayos de sol sobre París. El final más perfecto del viaje",cost:0,maps:"https://maps.app.goo.gl/PoMadKKezWPF3wy16",ticket:"Gratis",photos:"Sacre Coeur Paris atardecer dorado vistas ciudad",imp:true},
-  {h:"21h",ic:"✈️",bg:"#E1F5EE",n:"Traslado aeropuerto",de:"RER B desde Saint-Michel → CDG (35 min). RER C + Orlyval → Orly. Calcula 1h 15min mínimo",cost:8,maps:"https://maps.app.goo.gl/KhKdaHyBiRZjECPN6",photos:"RER B Paris CDG aeropuerto"},
+{d:10,m:"junio",ti:"Último día — Mouffetard + Crepas + Atardecer Sacré-Cœur",su:"Mercado, panteón, helado y despedida perfecta",items:[
+  {h:"9h",ic:"🛍️",bg:"#EEEDFE",n:"Rue Mouffetard — desayuno de mercado",de:"La calle de mercado más pintoresca de París. Quesos, panes, embutidos. Souvenirs auténticos",cost:10,maps:"https://www.google.com/maps/search/Rue+Mouffetard+Paris",ticket:"Gratis",photos:"Rue Mouffetard Paris mercado pintoresco"},
+  {h:"10:30h",ic:"🏛️",bg:"#E6F1FB",n:"Panteón",de:"Voltaire, Rousseau, Marie Curie, Zola. Vista 360° desde la cúpula",cost:13,maps:"https://www.google.com/maps/search/Pantheon+Paris",ticket:"https://www.paris-pantheon.fr/",photos:"Pantheon Paris cupula interior"},
+  {h:"13h",ic:"🥞",bg:"#FAEEDA",n:"★ Crepería Oroyona — la más barata de París",de:"36 Rue Mouffetard. Crêpes y galettes artesanales a precios de barrio. La favorita de los estudiantes",cost:7,maps:"https://www.google.com/maps/search/36+Rue+Mouffetard+Paris+creperie",ticket:"Sin reserva",photos:"Creperie Mouffetard Paris crepe galette",imp:true},
+  {h:"15h",ic:"🍦",bg:"#FAEEDA",n:"★ Berthillon — último helado del viaje",de:"El cierre más dulce posible para 12 días en París",cost:6,maps:"https://www.google.com/maps/search/Berthillon+Paris",photos:"Berthillon Paris ultimo helado",imp:true},
+  {h:"18h",ic:"⛪",bg:"#E6F1FB",n:"★ Atardecer en el Sagrado Corazón",de:"Las escalinatas de Montmartre al atardecer. Los últimos rayos de sol sobre París. El final más perfecto",cost:0,maps:"https://www.google.com/maps/search/Sacre+Coeur+Montmartre+Paris",ticket:"Gratis",photos:"Sacre Coeur Paris atardecer dorado vistas",imp:true},
+  {h:"21h",ic:"✈️",bg:"#E1F5EE",n:"Traslado aeropuerto",de:"RER B desde Saint-Michel → CDG (35 min). RER C + Orlyval → Orly. Calcula 1h 15min mínimo",cost:8,maps:"https://www.google.com/maps/search/Gare+Saint-Michel+Notre-Dame+Paris",photos:"RER B Paris CDG aeropuerto"},
 ]}
 ];
 
-// ============================================================
-// ICON PICKER
-// ============================================================
 function buildIconGrid(){
   document.getElementById("ICON_GRID").innerHTML=ICONS.map(ic=>
-    `<div class="icon-opt ${ic===selIcon?"selected":""}" onclick="pickIcon('${ic}')" title="${ic}">${ic}</div>`
+    `<div class="icon-opt ${ic===selIcon?"selected":""}" onclick="pickIcon('${ic}')">${ic}</div>`
   ).join("");
 }
+function pickIcon(ic){selIcon=ic;buildIconGrid();}
+function toggleImp(){isImp=!isImp;const e=document.getElementById("IMP_CHECK");e.classList.toggle("on",isImp);e.textContent=isImp?"★":"";}
+function toggleAdd(){const b=document.getElementById("ADD_BODY"),t=document.getElementById("ADD_TOGGLE");const o=b.classList.toggle("open");t.classList.toggle("open",o);}
 
-function pickIcon(ic){
-  selIcon=ic;
-  buildIconGrid();
-}
-
-function toggleImp(){
-  isImp=!isImp;
-  const el=document.getElementById("IMP_CHECK");
-  el.classList.toggle("on",isImp);
-  el.textContent=isImp?"★":"";
-}
-
-function toggleAdd(){
-  const body=document.getElementById("ADD_BODY");
-  const tog=document.getElementById("ADD_TOGGLE");
-  const open=body.classList.toggle("open");
-  tog.classList.toggle("open",open);
-}
-
-// ============================================================
-// DAY SELECTOR in form
-// ============================================================
 function buildDaySelect(){
-  const sel=document.getElementById("f_day");
-  sel.innerHTML=DAYS.filter(d=>!d.sp).map((d,i)=>
-    `<option value="${i}">${d.d} ${d.m} — ${d.ti.substring(0,28)}...</option>`
+  let fc=0;
+  document.getElementById("f_day").innerHTML=DAYS.filter(d=>!d.boda&&!d.dia4).map((d,i)=>
+    `<option value="${fc++}">${d.d} ${d.m} — ${(d.ti||"").substring(0,22)}...</option>`
   ).join("");
 }
 
-// ============================================================
-// ADD DESTINO
-// ============================================================
 function addDestino(){
   const name=document.getElementById("f_name").value.trim();
   if(!name){document.getElementById("f_name").focus();return;}
-
-  // find the real day index in DAYS
   const freeIdx=parseInt(document.getElementById("f_day").value);
-  let freeCount=0;
-  let dayIdx=-1;
+  let fc=0,dayIdx=-1;
   for(let i=0;i<DAYS.length;i++){
-    if(!DAYS[i].sp){
-      if(freeCount===freeIdx){dayIdx=i;break;}
-      freeCount++;
+    if(!DAYS[i].boda&&!DAYS[i].dia4){
+      if(fc===freeIdx){dayIdx=i;break;}
+      fc++;
     }
   }
   if(dayIdx<0)return;
-
   const cost=parseInt(document.getElementById("f_cost").value)||0;
-  const maps=document.getElementById("f_maps").value.trim()||"https://www.google.com/maps/search/"+encodeURIComponent(name+"+Paris");
+  const maps=document.getElementById("f_maps").value.trim()||"https://www.google.com/maps/search/"+encodeURIComponent(name+" Paris");
   const time=document.getElementById("f_time").value.trim()||"—";
   const desc=document.getElementById("f_desc").value.trim()||"Destino agregado por ti";
-
-  const newItem={
-    h:time,ic:selIcon,bg:ICON_COLORS[selIcon]||"#F5F5F5",
-    n:name,de:desc,cost,maps,
-    photos:name+" Paris",
-    imp:isImp,
-    userAdded:true
-  };
-
-  DAYS[dayIdx].items.push(newItem);
-
-  // reset form
-  document.getElementById("f_name").value="";
-  document.getElementById("f_desc").value="";
-  document.getElementById("f_cost").value="";
-  document.getElementById("f_maps").value="";
-  document.getElementById("f_time").value="";
-  isImp=false;
-  document.getElementById("IMP_CHECK").classList.remove("on");
-  document.getElementById("IMP_CHECK").textContent="";
-
-  const succ=document.getElementById("ADD_SUCCESS");
-  succ.style.display="block";
-  setTimeout(()=>succ.style.display="none",3000);
-
-  renderSum();
-  go(dayIdx);
+  DAYS[dayIdx].items.push({h:time,ic:selIcon,bg:IBGS[selIcon]||"#F5F5F5",n:name,de:desc,cost,maps,photos:name+" Paris",imp:isImp,userAdded:true});
+  ["f_name","f_desc","f_cost","f_maps","f_time"].forEach(id=>document.getElementById(id).value="");
+  isImp=false;document.getElementById("IMP_CHECK").classList.remove("on");document.getElementById("IMP_CHECK").textContent="";
+  const s=document.getElementById("ADD_SUCCESS");s.style.display="block";setTimeout(()=>s.style.display="none",3000);
+  renderSum();go(dayIdx);
 }
 
-// ============================================================
-// RENDER
-// ============================================================
-function fmt(c){return c===0?"Gratis":"€"+c}
-function dayTotal(d){return d.sp?0:d.items.reduce((s,i)=>s+i.cost,0)}
-function totalAll(){return DAYS.reduce((s,d)=>s+dayTotal(d),0)}
-function freeDays(){return DAYS.filter(d=>!d.sp).length}
-function impCount(){return DAYS.reduce((s,d)=>d.items?s+d.items.filter(i=>i.imp).length:s,0)}
-function userCount(){return DAYS.reduce((s,d)=>d.items?s+d.items.filter(i=>i.userAdded).length:s,0)}
-
-let cur=0;
+function fmt(c){return c===0?"Gratis":"€"+c;}
+function dayTotal(d){if(d.boda||d.dia4)return 0;return d.items.reduce((s,i)=>s+i.cost,0);}
+function totalAll(){return DAYS.reduce((s,d)=>s+dayTotal(d),0);}
+function freeDays(){return DAYS.filter(d=>!d.boda&&!d.dia4).length;}
+function impCount(){return DAYS.reduce((s,d)=>d.items?s+d.items.filter(i=>i.imp).length:s,0);}
+function userCount(){return DAYS.reduce((s,d)=>d.items?s+d.items.filter(i=>i.userAdded).length:s,0);}
 
 function renderSum(){
-  const t=totalAll();
-  const uc=userCount();
+  const t=totalAll(),uc=userCount();
   document.getElementById("SUM").innerHTML=`
-    <div class="sc"><div class="sl">Gasto total estimado</div><div class="sv" style="color:#0F6E56">€${t}</div><div class="ss">Todos los días libres</div></div>
-    <div class="sc"><div class="sl">Promedio por día</div><div class="sv">€${Math.round(t/freeDays())}</div><div class="ss">${freeDays()} días activos</div></div>
-    <div class="sc"><div class="sl">Tus imperdibles ⭐</div><div class="sv" style="color:#EF9F27">${impCount()}</div><div class="ss">marcados con estrella</div></div>
-    <div class="sc"><div class="sl">Agregados por ti</div><div class="sv" style="color:#7F77DD">${uc}</div><div class="ss">${uc===0?"Usa el módulo ↑":"destinos propios"}</div></div>
+    <div class="sc"><div class="sl">Gasto total estimado</div><div class="sv" style="color:#0F6E56">€${t}</div><div class="ss">Días libres</div></div>
+    <div class="sc"><div class="sl">Promedio / día</div><div class="sv">€${Math.round(t/freeDays())}</div><div class="ss">${freeDays()} días activos</div></div>
+    <div class="sc"><div class="sl">Imperdibles ⭐</div><div class="sv" style="color:#EF9F27">${impCount()}</div><div class="ss">marcados</div></div>
+    <div class="sc"><div class="sl">Tus destinos</div><div class="sv" style="color:#7F77DD">${uc}</div><div class="ss">${uc===0?"Agrega el tuyo ↑":"propios"}</div></div>
   `;
 }
 
 function renderNav(){
   document.getElementById("NAV").innerHTML=DAYS.map((d,i)=>{
-    const isCustom=!d.sp&&d.items&&d.items.some(it=>it.userAdded);
-    return`<button class="dbt ${d.sp?"sp":""} ${isCustom?"custom":""} ${i===cur?"on":""}" onclick="go(${i})">${d.d} ${d.m}</button>`;
+    const isBoda=d.boda||d.dia4;
+    const isCustom=d.items&&d.items.some(it=>it.userAdded);
+    return`<button class="dbt ${isBoda?"boda-tab":""} ${isCustom?"custom":""} ${i===cur?"on":""}" onclick="go(${i})">${d.d} ${d.m}</button>`;
   }).join("");
 }
 
 function showPhotos(name,query,mapsUrl){
-  const searchUrl=`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
+  const url=`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
   document.getElementById("MODAL_TITLE").textContent="📸 "+name;
   document.getElementById("MODAL_CONTENT").innerHTML=`
     <div style="padding:1rem;background:var(--color-background-secondary,#f5f5f5);border-radius:8px;text-align:center">
       <div style="font-size:32px;margin-bottom:8px">📸</div>
       <div style="font-size:13px;font-weight:600;margin-bottom:4px">${name}</div>
-      <div style="font-size:11px;color:var(--color-text-secondary,#666);margin-bottom:12px">Haz clic para ver fotos en Google Imágenes</div>
-      <a href="${searchUrl}" target="_blank" style="display:inline-block;padding:7px 16px;background:#1D9E75;color:white;border-radius:8px;text-decoration:none;font-size:12px;font-weight:600">🔍 Ver fotos de ${name}</a>
+      <div style="font-size:11px;color:var(--color-text-secondary,#666);margin-bottom:12px">Ver en Google Imágenes</div>
+      <a href="${url}" target="_blank" style="display:inline-block;padding:7px 16px;background:#1D9E75;color:white;border-radius:8px;text-decoration:none;font-size:12px;font-weight:600">🔍 Ver fotos</a>
       ${mapsUrl?`<br><br><a href="${mapsUrl}" target="_blank" style="font-size:11px;color:#1A6FAF">📍 Ver en Google Maps</a>`:""}
     </div>`;
   document.getElementById("MODAL").style.display="flex";
 }
+function closeModal(e){if(!e||e.target===document.getElementById("MODAL"))document.getElementById("MODAL").style.display="none";}
+function delItem(di,ii){DAYS[di].items.splice(ii,1);renderSum();renderNav();renderDay(cur);}
 
-function closeModal(e){
-  if(!e||e.target===document.getElementById("MODAL"))
-    document.getElementById("MODAL").style.display="none";
+function renderDia4(i){
+  document.getElementById("DV").innerHTML=`<div class="dv">
+    <div class="dhead">
+      <div class="dhl">
+        <div class="badge boda-badge"><span class="bnum boda-num">4</span><span class="bmes">junio</span></div>
+        <div><div class="dtit">💍 Día antes de la boda</div><div class="dsubt">Cena íntima con los novios</div></div>
+      </div>
+    </div>
+    <div class="d4-card">
+      <div class="d4-header">
+        <div class="d4-emoji">🥂</div>
+        <div class="d4-title">Cena con los novios</div>
+        <div class="d4-sub">Jueves 4 de junio · La noche antes de la ceremonia</div>
+      </div>
+      <div class="d4-items">
+
+        <div class="d4-item">
+          <div class="d4-icon" style="background:#EAF3DE">🌅</div>
+          <div class="d4-info">
+            <div class="d4-time">Tarde libre</div>
+            <div class="d4-name">Día libre para explorar o descansar</div>
+            <div class="d4-desc">Aprovecha la tarde para ir a un spa, pasear por el Sena, visitar algún lugar pendiente del itinerario o simplemente descansar antes de la gran noche.</div>
+          </div>
+        </div>
+
+        <div class="d4-item highlight">
+          <div class="d4-icon" style="background:#FBEAF0">🥂</div>
+          <div class="d4-info">
+            <div class="d4-time">🕗 19h — 20h · Apéritif</div>
+            <div class="d4-name">
+              Reunión con los novios — Apéritif de bienvenida
+              <span class="d4-name-badge">💍 Boda</span>
+            </div>
+            <div class="d4-desc">Encuentro previo con los novios y los invitados cercanos. El momento perfecto para conocer a los demás invitados antes de la ceremonia del día siguiente.</div>
+            <div class="d4-links">
+              <button class="d4-btn d4-btn-res" onclick="showPhotos('Apéritif Paris soirée','apéritif soiree Paris terrasse','')">📸 Ideas de lugar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d4-item highlight">
+          <div class="d4-icon" style="background:#FBEAF0">🍽️</div>
+          <div class="d4-info">
+            <div class="d4-time">🕗 20:30h — 23h · Cena</div>
+            <div class="d4-name">
+              Cena íntima con los novios
+              <span class="d4-name-badge">💍 Boda</span>
+            </div>
+            <div class="d4-desc">La cena de ensayo o el último encuentro relajado antes del gran día. Sugerencias de restaurantes especiales para la ocasión:</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+              <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:8px;padding:10px 12px">
+                <div style="font-size:12px;font-weight:600;margin-bottom:2px">🥂 La Tour d'Argent</div>
+                <div style="font-size:11px;color:var(--color-text-secondary)">Restaurante legendario con vista al Sena y Notre-Dame. El pato a la prensa desde 1582. Para una ocasión muy especial.</div>
+                <div class="d4-links" style="margin-top:6px">
+                  <a class="d4-btn d4-btn-maps" href="https://www.google.com/maps/search/La+Tour+d+Argent+Paris" target="_blank">📍 Maps</a>
+                  <a class="d4-btn" style="background:#FFF0E0;color:#B05A00;border:0.5px solid #FACA8A" href="https://www.latourdargent.com/" target="_blank">🌐 Reservar</a>
+                </div>
+              </div>
+              <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:8px;padding:10px 12px">
+                <div style="font-size:12px;font-weight:600;margin-bottom:2px">🍷 Frenchie — Covent Garden</div>
+                <div style="font-size:11px;color:var(--color-text-secondary)">Bistró moderno y elegante en el Sentier. Cocina francesa de temporada con toques creativos. Ambiente íntimo perfecto para grupos pequeños.</div>
+                <div class="d4-links" style="margin-top:6px">
+                  <a class="d4-btn d4-btn-maps" href="https://www.google.com/maps/search/Frenchie+Paris+Sentier" target="_blank">📍 Maps</a>
+                  <a class="d4-btn" style="background:#FFF0E0;color:#B05A00;border:0.5px solid #FACA8A" href="https://www.frenchie-restaurant.com/" target="_blank">🌐 Reservar</a>
+                </div>
+              </div>
+              <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:8px;padding:10px 12px">
+                <div style="font-size:12px;font-weight:600;margin-bottom:2px">✨ Lapérouse — quai des Grands-Augustins</div>
+                <div style="font-size:11px;color:var(--color-text-secondary)">Restaurante histórico del s.XVII con salones privados decorados con espejos y terciopelo. Cocina clásica francesa. Muy romántico para la víspera de una boda.</div>
+                <div class="d4-links" style="margin-top:6px">
+                  <a class="d4-btn d4-btn-maps" href="https://www.google.com/maps/search/Laperouse+Paris+restaurant" target="_blank">📍 Maps</a>
+                  <a class="d4-btn" style="background:#FFF0E0;color:#B05A00;border:0.5px solid #FACA8A" href="https://www.laperouse.com/" target="_blank">🌐 Reservar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="d4-note">
+        <span style="font-size:16px;flex-shrink:0">💡</span>
+        <span>Si los novios ya tienen un lugar confirmado para la cena, usa el módulo de arriba para agregarlo con el botón <strong>"+ Agregar al itinerario"</strong> y selecciona el día 4 de junio.</span>
+      </div>
+    </div>
+    ${navHtml(i)}
+  </div>`;
 }
 
-function delItem(dayIdx,itemIdx){
-  DAYS[dayIdx].items.splice(itemIdx,1);
-  renderSum();renderNav();renderDay(cur);
+function renderBodaDay(d,i){
+  const c=d.civil,r=d.recep;
+  document.getElementById("DV").innerHTML=`<div class="dv">
+    <div class="dhead">
+      <div class="dhl">
+        <div class="badge boda-badge"><span class="bnum boda-num">${d.d}</span><span class="bmes">${d.m}</span></div>
+        <div><div class="dtit">💍 ${d.spti}</div><div class="dsubt">${d.spsu}</div></div>
+      </div>
+    </div>
+    <div class="boda-card">
+      <div class="boda-header">
+        <div class="boda-emoji">💍</div>
+        <div class="boda-title">Le Programme</div>
+        <div class="boda-date">5 juin 2026 · Paris</div>
+      </div>
+      <div class="boda-events">
+        <div class="boda-event">
+          <div class="boda-event-icon civil">🏛️</div>
+          <div class="boda-event-info">
+            <div class="boda-event-type">Cérémonie Civile</div>
+            <div class="boda-event-name">${c.place}</div>
+            <div class="boda-event-addr">${c.addr}</div>
+            <div class="boda-event-time">🕓 ${c.time}</div>
+            <div class="boda-links">
+              <a class="boda-btn boda-btn-maps" href="${c.maps}" target="_blank">📍 Google Maps</a>
+              <a class="boda-btn boda-btn-waze" href="${c.waze}" target="_blank">🚗 Waze</a>
+            </div>
+          </div>
+        </div>
+        <div class="boda-event">
+          <div class="boda-event-icon recep">🥂</div>
+          <div class="boda-event-info">
+            <div class="boda-event-type">Réception &amp; Soirée</div>
+            <div class="boda-event-name">${r.place}</div>
+            <div class="boda-event-addr" style="white-space:pre-line">${r.addr}</div>
+            <div class="boda-event-time">🕖 ${r.time}</div>
+            <div class="boda-links">
+              <a class="boda-btn boda-btn-maps" href="${r.maps}" target="_blank">📍 Google Maps</a>
+              <a class="boda-btn boda-btn-waze" href="${r.waze}" target="_blank">🚗 Waze</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="boda-note">📌 ${c.note}</div>
+    </div>
+    ${navHtml(i)}
+  </div>`;
 }
 
 function renderDay(i){
   const d=DAYS[i];
-  if(d.sp){
-    document.getElementById("DV").innerHTML=`<div class="dv">
-      <div class="dhead"><div class="dhl">
-        <div class="badge"><span class="bnum">${d.d}</span><span class="bmes">${d.m}</span></div>
-        <div><div class="dtit">${d.spti}</div><div class="dsubt">${d.spsu}</div></div>
-      </div></div>
-      <div class="spbox"><div style="font-size:40px;margin-bottom:8px">${d.spic}</div><div class="sptit">${d.spti}</div><div class="spsub">${d.spsu}</div></div>
-      ${navHtml(i)}</div>`;
-    return;
-  }
-  const tot=dayTotal(d);
-  const freeN=d.items.filter(x=>x.cost===0).length;
-
+  if(d.dia4){renderDia4(i);return;}
+  if(d.boda){renderBodaDay(d,i);return;}
+  const tot=dayTotal(d),freeN=d.items.filter(x=>x.cost===0).length;
   const rows=d.items.map((it,idx)=>{
-    const delBtn=it.userAdded?`<button class="lbtn lbtn-del" onclick="delItem(${i},${idx})">✕ Eliminar</button>`:"";
-    const userBadge=it.userAdded?`<span class="user-badge">TÚ</span>`:"";
-    const ticketBtn=it.ticket&&it.ticket.startsWith("http")?`<a class="lbtn lbtn-ticket" href="${it.ticket}" target="_blank">🎟️ Tickets</a>`:(it.ticket&&it.ticket!=="Gratis"&&it.ticket!=="Incluido en pase"?`<span class="lbtn lbtn-free" style="font-size:10px">${it.ticket}</span>`:"");
-    const freeTag=it.ticket==="Gratis"||it.cost===0?`<span class="lbtn lbtn-free">🆓 Gratis</span>`:"";
+    const del=it.userAdded?`<button class="lbtn lbtn-del" onclick="delItem(${i},${idx})">✕ Quitar</button>`:"";
+    const ub=it.userAdded?`<span class="user-badge">TÚ</span>`:"";
+    const tb=it.ticket&&it.ticket.startsWith("http")?`<a class="lbtn lbtn-ticket" href="${it.ticket}" target="_blank">🎟️ Tickets</a>`:
+      (it.ticket&&it.ticket!=="Gratis"&&it.ticket!=="Incluido en pase"?`<span class="lbtn" style="background:#FFF8E1;color:#7A5000;border:0.5px solid #FFD54F;font-size:10px">${it.ticket}</span>`:"");
+    const fg=(!it.ticket||it.ticket==="Gratis")&&it.cost===0?`<span class="lbtn lbtn-free">🆓 Gratis</span>`:"";
     return`<div class="row ${it.userAdded?"user-added":""}">
-      <div class="iblock">
-        <div class="ibox" style="background:${it.bg};font-size:19px">${it.ic}</div>
-        <div class="itime">${it.h}</div>
-      </div>
+      <div class="iblock"><div class="ibox" style="background:${it.bg}">${it.ic}</div><div class="itime">${it.h}</div></div>
       <div>
-        <div class="iname">${it.imp?'<span class="imp-star">⭐</span>':''}<span>${it.n}</span>${userBadge}</div>
+        <div class="iname">${it.imp?'<span class="imp-star">⭐</span>':''}<span>${it.n}</span>${ub}</div>
         <div class="idesc">${it.de}</div>
         <div class="ilinks">
           <a class="lbtn lbtn-maps" href="${it.maps}" target="_blank">📍 Maps</a>
-          <button class="lbtn lbtn-photo" onclick="showPhotos('${it.n.replace(/'/g,"\\'")}','${it.photos}','${it.maps}')">📸 Fotos</button>
-          ${ticketBtn}${freeTag}${delBtn}
+          <button class="lbtn lbtn-photo" onclick="showPhotos('${it.n.replace(/['"<>]/g,"")}','${it.photos}','${it.maps}')">📸 Fotos</button>
+          ${tb}${fg}${del}
         </div>
       </div>
-      <div style="text-align:right;padding-top:2px">
-        <div class="icost ${it.cost===0?"free":"paid"}">${it.cost===0?"Gratis":"€"+it.cost}</div>
-      </div>
+      <div style="text-align:right;padding-top:2px"><div class="icost ${it.cost===0?"free":"paid"}">${it.cost===0?"Gratis":"€"+it.cost}</div></div>
     </div>`;
   }).join("");
-
-  const routeHtml=d.route?`<div class="rtebox">
-    <div class="rtelabel">🗺️ Ruta desde el Airbnb</div>
-    <div class="rtesteps">${d.route.map(r=>r==="→"?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join("")}</div>
-  </div>`:"";
-
+  const route=d.route?`<div class="rtebox"><div class="rtelabel">🗺️ Ruta desde el Airbnb</div><div class="rtesteps">${d.route.map(r=>r==="→"?`<span class="rta">→</span>`:`<span class="rts">${r}</span>`).join("")}</div></div>`:"";
   document.getElementById("DV").innerHTML=`<div class="dv">
     <div class="dhead">
       <div class="dhl">
@@ -533,14 +626,14 @@ function renderDay(i){
       </div>
       <div class="dtot"><div class="tl">${freeN} gratis · gasto estimado</div><div class="tv">€${tot}</div></div>
     </div>
-    ${rows}${routeHtml}${navHtml(i)}
-  </div>`;
+    ${rows}${route}${navHtml(i)}</div>`;
 }
 
 function navHtml(i){
   const dots=DAYS.map((d,j)=>{
-    const isC=!d.sp&&d.items&&d.items.some(it=>it.userAdded);
-    return`<div class="dot ${isC?"custom":""} ${j===i?"on":""}"></div>`;
+    const isBoda=d.boda||d.dia4;
+    const isC=d.items&&d.items.some(it=>it.userAdded);
+    return`<div class="dot ${isBoda?"boda-dot":""} ${isC?"custom-dot":""} ${j===i?"on":""}"></div>`;
   }).join("");
   return`<div class="navrow">
     <button class="nb" onclick="go(${i-1})" ${i===0?"disabled":""}>← Anterior</button>
@@ -549,19 +642,13 @@ function navHtml(i){
   </div>`;
 }
 
-function go(i){
-  if(i<0||i>=DAYS.length)return;
-  cur=i;renderNav();renderDay(i);
-}
+function go(i){if(i<0||i>=DAYS.length)return;cur=i;renderNav();renderDay(i);}
 
-// ============================================================
-// INIT
-// ============================================================
-buildIconGrid();
-buildDaySelect();
-renderSum();
-renderNav();
-renderDay(0);
+// Init
+buildIconGrid();buildDaySelect();renderSum();renderNav();
+// Abrir directo en el día 4
+cur=5; // índice del día 4 en el array
+go(5);
 </script>
 </body>
 </html>

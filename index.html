@@ -176,35 +176,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1
 <div class="search-module">
   <div class="search-title">🔍 Buscador inteligente — ¿dónde va este lugar?</div>
   <div class="search-row">
-    <input class="search-input" id="SINPUT" placeholder="Ej: museo, mercado, helados, rooftop, jazz, crepas..." onkeydown="if(event.key==='Enter')doSearch()">
+    <input class="search-input" id="SINPUT" placeholder="Ej: Musée Picasso, jazz bar, mercado, Le Comptoir..." onkeydown="if(event.key==='Enter')doSearch()">
     <button class="search-btn" onclick="doSearch()">Buscar</button>
   </div>
   <div class="sresult" id="SRESULT"></div>
-</div>
-
-<div class="done-banner">
-  <span style="font-size:22px;flex-shrink:0">✅</span>
-  <div class="bt bt-g">
-    <div class="bt-title">3 días completados — 30 y 31 mayo + hoy 1 junio</div>
-    <div class="bt-sub">30/mayo: Carette · Torre Eiffel (subida) · Trocadéro · Café de Flore · Barrio Latino · Caveau Huchette &nbsp;|&nbsp; 31/mayo: Louvre · Tullerías · Concorde · Champs · Notre-Dame · Bouillon Chartier · Caveau &nbsp;|&nbsp; 1/jun: Running · Le Passy · Lafayette terraza · Sacré-Cœur · Caves Populaires · Rooftop 10ème Ciel</div>
-  </div>
-</div>
-
-<div class="man-banner">
-  <div class="pulse"></div>
-  <div class="bt bt-p">
-    <div class="bt-title">Mañana — martes 2 junio</div>
-    <div class="bt-sub">Le Marais · Place des Vosges · Marché Enfants Rouges · 59 Rivoli · Bag-all · Mangez et Cassez (~€10) · Le Bar Fleuri</div>
-  </div>
-</div>
-
-<div class="ab">
-  <span style="font-size:20px;flex-shrink:0">🏠</span>
-  <div class="ab-info">
-    <div class="ab-title">Airbnb — 10 Rue des Eaux, 75016 París</div>
-    <div class="ab-sub">Passy · Torre Eiffel 10 min · Stade Emile Anthoine 5 min · Running cada mañana a las 7h</div>
-  </div>
-  <a class="ab-link" href="https://www.google.com/maps/search/10+Rue+des+Eaux+75016+Paris" target="_blank">📍 Maps</a>
 </div>
 
 <div class="sumgrid" id="SUM"></div>
@@ -234,6 +209,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1
 </div>
 <div class="daynav" id="NAV"></div>
 <div id="DV"></div>
+<div class="done-banner" style="margin-top:.8rem">
+  <span style="font-size:22px;flex-shrink:0">✅</span>
+  <div class="bt bt-g">
+    <div class="bt-title">3 días completados — 30 y 31 mayo + hoy 1 junio</div>
+    <div class="bt-sub">30/mayo: Carette · Torre Eiffel (subida) · Trocadéro · Café de Flore · Barrio Latino · Caveau Huchette &nbsp;|&nbsp; 31/mayo: Louvre · Tullerías · Concorde · Champs · Notre-Dame · Bouillon Chartier · Caveau &nbsp;|&nbsp; 1/jun: Running · Le Passy · Lafayette terraza · Sacré-Cœur · Caves Populaires · Rooftop 10ème Ciel</div>
+  </div>
+</div>
+
+<div class="man-banner" style="margin-top:.8rem">
+  <div class="pulse"></div>
+  <div class="bt bt-p">
+    <div class="bt-title">Mañana — martes 2 junio</div>
+    <div class="bt-sub">Le Marais · Place des Vosges · Marché Enfants Rouges · 59 Rivoli · Bag-all · Mangez et Cassez (~€10) · Le Bar Fleuri</div>
+  </div>
+</div>
+
+<div class="ab" style="margin-top:.8rem">
+  <span style="font-size:20px;flex-shrink:0">🏠</span>
+  <div class="ab-info">
+    <div class="ab-title">Airbnb — 10 Rue des Eaux, 75016 París</div>
+    <div class="ab-sub">Passy · Torre Eiffel 10 min · Stade Emile Anthoine 5 min · Running cada mañana a las 7h</div>
+  </div>
+  <a class="ab-link" href="https://www.google.com/maps/search/10+Rue+des+Eaux+75016+Paris" target="_blank">📍 Maps</a>
+</div>
+
 <div class="legend">
   <div class="leg">⭐ Imperdible</div>
   <div class="leg"><span style="font-size:9px;background:#7B4FCC;color:#fff;padding:1px 6px;border-radius:6px;font-weight:700">→</span>Mañana</div>
@@ -374,71 +374,199 @@ recep:{place:"L'île — Parc de l'Ile Saint-Germain",addr:"170 Quai de Stalingr
 ];
 
 // ======================================================
-// BUSCADOR INTELIGENTE
+// BUSCADOR INTELIGENTE v2
+// Función 1: busca en el itinerario (sin acentos + multiidioma)
+// Función 2: si no está, usa Nominatim para ubicar y sugiere día
 // ======================================================
-function doSearch(){
-  const q=document.getElementById("SINPUT").value.trim().toLowerCase();
+
+// Normalizar texto: quita acentos y pasa a minúsculas
+function norm(s){
+  return s.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[''`]/g,"");
+}
+
+// Diccionario multiidioma: término → variantes normalizadas
+const DICT={
+  "museo":["museum","musee","musée","museo","art","arte","galeria","gallery"],
+  "mercado":["market","marche","marché","mercado","puces","flea","bazar","brocante"],
+  "helado":["ice cream","glaces","gelato","helado","berthillon","amorino"],
+  "cafe":["coffee","café","cafe","kafe","desayuno","breakfast","brunch","croissant","boulangerie","bakery"],
+  "jazz":["jazz","swing","blues","music","musique","cueva","caveau"],
+  "bar":["bar","pub","cerveza","beer","biere","bière","vino","wine","terraza","terrasse","aperitivo","apero"],
+  "rooftop":["rooftop","terrace","roof","techo","mirador","vista"],
+  "crepas":["crepe","crêpe","galette","crepas","pancake"],
+  "burger":["burger","hamburguesa","hamburguer","mofo"],
+  "running":["running","correr","run","atletismo","jogging","pista"],
+  "arte":["art","arte","squat","galeria","gallery","exposition","exposicion"],
+  "torre eiffel":["eiffel","torre","tower","tour eiffel"],
+  "versalles":["versailles","versalles","palace","palacio","chateau","château"],
+  "parque":["park","parque","jardin","jardin","garden","jardines"],
+  "carne":["steak","carne","beef","entrecote","entrecôte"],
+  "pato":["duck","pato","canard","magret"],
+  "pollo":["chicken","pollo","poulet"],
+  "libanes":["libanes","lebanese","libanais","liban","hummus","falafel","wrap"],
+  "barco":["boat","barco","bateau","crucero","cruise","sena","seine"],
+  "souvenirs":["souvenir","regalo","gift","bolso","bag","tienda","shop"],
+  "antigüedades":["antique","antiguedades","vintage","puces","flea","brocante"],
+  "boda":["wedding","boda","mariage","ceremonie","cérémonie"],
+  "jazz":["jazz","swing","bebop","blues"],
+  "mercadillo":["marche","marché","market","puces","brocante","flea"],
+};
+
+// Zonas de París con coordenadas centrales y días del itinerario que pasan por ahí
+const ZONES=[
+  {name:"Trocadéro / Tour Eiffel",lat:48.858,lng:2.294,days:[0,1,2],hora:"mañana",tipo:"monumento"},
+  {name:"Le Marais",lat:48.857,lng:2.352,days:[3],hora:"mañana-tarde",tipo:"barrio"},
+  {name:"Montmartre",lat:48.886,lng:2.343,days:[2],hora:"tarde",tipo:"barrio"},
+  {name:"Saint-Germain-des-Prés",lat:48.854,lng:2.332,days:[6],hora:"mañana",tipo:"barrio"},
+  {name:"Île de la Cité / Notre-Dame",lat:48.853,lng:2.349,days:[1,6],hora:"mañana",tipo:"monumento"},
+  {name:"Louvre / Tuileries",lat:48.861,lng:2.336,days:[1],hora:"mañana",tipo:"museo"},
+  {name:"Champs-Élysées / Arc de Triomphe",lat:48.874,lng:2.295,days:[1],hora:"mediodía",tipo:"monumento"},
+  {name:"Versailles",lat:48.804,lng:2.122,days:[4],hora:"mañana",tipo:"palacio"},
+  {name:"Puces de Saint-Ouen",lat:48.902,lng:2.342,days:[5],hora:"mañana",tipo:"mercado"},
+  {name:"Bercy / 12e",lat:48.839,lng:2.384,days:[5],hora:"tarde",tipo:"museo"},
+  {name:"Buttes-Chaumont / Canal",lat:48.879,lng:2.381,days:[8],hora:"mañana",tipo:"parque"},
+  {name:"Belleville / 20e",lat:48.870,lng:2.385,days:[8],hora:"tarde",tipo:"barrio"},
+  {name:"Bastille / 12e / Aligre",lat:48.853,lng:2.369,days:[9],hora:"mañana",tipo:"mercado"},
+  {name:"Palais de Tokyo / 16e",lat:48.864,lng:2.298,days:[9],hora:"mediodía",tipo:"museo"},
+  {name:"Panteón / Mouffetard / 5e",lat:48.846,lng:2.346,days:[9,10],hora:"tarde",tipo:"mirador"},
+  {name:"Père Lachaise / 20e",lat:48.861,lng:2.395,days:[9],hora:"tarde",tipo:"cementerio"},
+  {name:"Grands Boulevards / Opéra",lat:48.871,lng:2.336,days:[1],hora:"tarde",tipo:"barrio"},
+  {name:"Philharmonie / La Villette",lat:48.894,lng:2.394,days:[8],hora:"tarde",tipo:"cultura"},
+];
+
+function distKm(lat1,lng1,lat2,lng2){
+  const R=6371,dLat=(lat2-lat1)*Math.PI/180,dLng=(lng2-lng1)*Math.PI/180;
+  const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function tipoHorario(tags){
+  const t=tags.join(" ");
+  if(/market|mercado|marche|marché|puces|brocante/.test(t))return"9h–12h (los mercados cierran temprano)";
+  if(/museum|musee|museo|galerie|galeria|art/.test(t))return"10h–14h (museos mejor en la mañana)";
+  if(/bar|rooftop|jazz|vino|wine|cerveza|caveau/.test(t))return"20h–23h (bares y jazz en la noche)";
+  if(/restaurant|cena|dinner|diner|carne|steak|pollo|pato/.test(t))return"19:30h–21h (cena)";
+  if(/desayuno|breakfast|cafe|coffee|croissant|boulangerie/.test(t))return"8h–10h (desayuno)";
+  if(/park|parque|jardin|garden/.test(t))return"10h–13h (parques mejor en la mañana)";
+  return"11h–15h (flexible)";
+}
+
+async function doSearch(){
+  const raw=document.getElementById("SINPUT").value.trim();
   const res=document.getElementById("SRESULT");
-  if(!q){res.classList.remove("show");return;}
-  const kw={
-    "museo":["orsay","branly","tokyo","forains","artes","louvre","galerie","dior"],
-    "mercado":["marché","mercado","puces","aligre","enfants","fleurs","mouffetard","montreuil","jussieu"],
-    "helado":["berthillon","amorino","glaces","helado"],
-    "cafe":["carette","flore","campana","passy","desayuno","coffee","motors","croissant","beurre","maison"],
-    "jazz":["caveau","huchette","oubliettes","jazz"],
-    "bar":["rooftop","ciel","vino","caves","populaires"],
-    "crepas":["crep","oroyona","mouffetard"],
-    "burger":["mangez","cassez","mofo","burger","hamburguesa"],
-    "running":["running","stade","emile","anthoine","correr"],
-    "arte":["rivoli","59","galería","tokyo","squat"],
-    "torre":["torre","eiffel","trocadero","subir","subida","ciel","rooftop"],
-    "mirador":["terraza","lafayette","pantheon","panteón","vistas","360","trocadero"],
-    "parque":["buttes","chaumont","luxemburgo","tuileries","champ"],
-    "carne":["entrecote","entrecôte"],
-    "pato":["canards","pato"],
-    "pollo":["fleuri","bar fleuri","pollo"],
-    "libanes":["malak","tawouk","libanes","hummus"],
-    "versalles":["versalles","versailles","palacio"],
-    "boda":["mairie","cérémonie"],
-    "souvenirs":["bag","bolso","rosiers"],
-    "barco":["bateaux","mouches","crucero"],
-    "mantequilla":["beurre","isabelle","maison"],
-    "antiguedades":["puces","montreuil","dauphine","vintage"],
-  };
-  let terms=[q];
-  Object.entries(kw).forEach(([k,v])=>{
-    if(k.includes(q)||q.includes(k)||v.some(w=>q.includes(w)||w.includes(q)))terms.push(...v);
+  if(!raw){res.classList.remove("show");return;}
+  const q=norm(raw);
+  res.innerHTML=`<div class="sr-title">🔍 Buscando "${raw}"...</div>`;
+  res.classList.add("show");
+
+  // --- Construir términos de búsqueda expandidos ---
+  let terms=new Set([q,...q.split(" ").filter(w=>w.length>2)]);
+  Object.entries(DICT).forEach(([k,v])=>{
+    const nk=norm(k);
+    const nv=v.map(norm);
+    if(nk.includes(q)||q.includes(nk)||nv.some(w=>w.includes(q)||q.includes(w))){
+      nv.forEach(w=>terms.add(w));
+      terms.add(nk);
+    }
   });
-  const pending=DAYS.filter(d=>!d.done&&!d.boda);
-  const results=[];
-  pending.forEach(d=>{
-    if(!d.items)return;
+  const termArr=[...terms].filter(w=>w.length>2);
+
+  // --- FUNCIÓN 1: buscar en el itinerario ---
+  const found=[];
+  DAYS.forEach((d,di)=>{
+    if(d.done||d.boda||!d.items)return;
     d.items.forEach(it=>{
-      const t=(it.n+it.de+it.ic).toLowerCase();
-      if(terms.some(w=>w.length>2&&t.includes(w))){
-        results.push({d,it,score:terms.filter(w=>w.length>2&&t.includes(w)).length});
-      }
+      const t=norm(it.n+" "+it.de);
+      const score=termArr.filter(w=>t.includes(w)).length;
+      if(score>0)found.push({d,di,it,score});
     });
   });
-  results.sort((a,b)=>b.score-a.score);
-  const top=results.slice(0,3);
-  if(top.length===0){
-    res.innerHTML=`<div class="sr-title">Resultado para "${q}"</div><div class="sr-empty">No encontré ese lugar en los días pendientes. Usa el módulo para agregarlo manualmente.</div>`;
-    res.classList.add("show");return;
+  found.sort((a,b)=>b.score-a.score);
+
+  if(found.length>0){
+    // Está en el plan
+    const top=found.slice(0,3);
+    res.innerHTML=`<div class="sr-title">✅ "${raw}" ya está en tu itinerario</div>`+
+      top.map(({d,di,it})=>{
+        const color=d.manana?"#7B4FCC":"#1D9E75";
+        const label=d.manana?`→ Mañana ${d.d} ${d.m}`:`${d.d} ${d.m}`;
+        return`<div class="sr-item">
+          <div class="sr-left">
+            <div class="sr-day" style="background:${color}">${label}</div>
+            <button class="sr-go" onclick="go(${di})">Ver día</button>
+          </div>
+          <div>
+            <div class="sr-name">${it.ic} ${it.n.replace(/⭐\s*/,"")}</div>
+            <div class="sr-why">${it.h} · ${d.ti}</div>
+          </div>
+        </div>`;
+      }).join("");
+    return;
   }
-  res.innerHTML=`<div class="sr-title">💡 Mejor encaje para "${q}"</div>`+top.map(({d,it})=>{
-    const di=DAYS.indexOf(d);
-    const color=d.manana?"#7B4FCC":"#1D9E75";
-    const label=d.manana?`→ Mañana ${d.d} ${d.m}`:`${d.d} ${d.m}`;
-    return`<div class="sr-item">
-      <div class="sr-left">
-        <div class="sr-day" style="background:${color}">${label}</div>
-        <button class="sr-go" onclick="go(${di})">Ver día</button>
-      </div>
-      <div><div class="sr-name">${it.ic} ${it.n.replace(/⭐\s*/,"")}</div><div class="sr-why">${it.h} · Queda bien en la ruta de ese día</div></div>
-    </div>`;
-  }).join("");
-  res.classList.add("show");
+
+  // --- FUNCIÓN 2: no está en el plan → Nominatim ---
+  try{
+    const url=`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(raw+", Paris, France")}&format=json&limit=1&accept-language=es`;
+    const resp=await fetch(url,{headers:{"Accept-Language":"es","User-Agent":"ParisItineraryApp/1.0"}});
+    const data=await resp.json();
+
+    if(!data||data.length===0){
+      res.innerHTML=`<div class="sr-title">🔍 "${raw}"</div><div class="sr-empty">No encontré este lugar en el plan ni en París. Verifica el nombre o agrégalo manualmente con el módulo de abajo.</div>`;
+      return;
+    }
+
+    const place=data[0];
+    const placeLat=parseFloat(place.lat);
+    const placeLng=parseFloat(place.lon);
+    const placeName=place.display_name.split(",")[0];
+
+    // Encontrar zona más cercana
+    let bestZone=null,bestDist=999;
+    ZONES.forEach(z=>{
+      const d=distKm(placeLat,placeLng,z.lat,z.lng);
+      if(d<bestDist){bestDist=d;bestZone=z;}
+    });
+
+    // Obtener días sugeridos (pendientes y no boda)
+    const sugDays=bestZone.days
+      .map(di=>({di,d:DAYS[di]}))
+      .filter(({d})=>d&&!d.done&&!d.boda)
+      .slice(0,2);
+
+    const horario=tipoHorario(termArr);
+    const distStr=bestDist<0.5?"justo en la zona":bestDist<1.5?`a ${Math.round(bestDist*1000)}m`:`a ${bestDist.toFixed(1)}km`;
+
+    if(sugDays.length===0){
+      res.innerHTML=`<div class="sr-title">📍 "${placeName}" — zona: ${bestZone.name}</div>
+        <div class="sr-empty">Está ${distStr} de ${bestZone.name}, pero los días que pasan por esa zona ya están completados. Agrégalo manualmente al día que prefieras.</div>`;
+      return;
+    }
+
+    res.innerHTML=`<div class="sr-title">📍 "${placeName}" — no está en tu plan aún</div>`+
+      sugDays.map(({di,d})=>{
+        const color=d.manana?"#7B4FCC":"#1D9E75";
+        const label=d.manana?`→ Mañana ${d.d} ${d.m}`:`${d.d} ${d.m}`;
+        return`<div class="sr-item">
+          <div class="sr-left">
+            <div class="sr-day" style="background:${color}">${label}</div>
+            <button class="sr-go" onclick="go(${di})">Ver día</button>
+          </div>
+          <div>
+            <div class="sr-name">📍 Agregar a este día</div>
+            <div class="sr-why"><strong>Zona:</strong> ${bestZone.name} (${distStr}) · <strong>Mejor horario:</strong> ${horario}</div>
+            <div class="sr-why" style="margin-top:3px;color:#0F6E56">✏️ Usa el módulo "Agregar destino" y selecciona el ${d.d} ${d.m}</div>
+          </div>
+        </div>`;
+      }).join("")+
+      `<div style="font-size:10px;color:#888;margin-top:8px;padding-top:6px;border-top:1px solid #E1F5EE">
+        📍 Coordenadas encontradas: ${placeLat.toFixed(4)}, ${placeLng.toFixed(4)} · Fuente: OpenStreetMap
+      </div>`;
+
+  }catch(e){
+    res.innerHTML=`<div class="sr-title">🔍 "${raw}"</div><div class="sr-empty">No se pudo conectar con OpenStreetMap. Verifica tu conexión o agrégalo manualmente.</div>`;
+  }
 }
 
 function bIG(){document.getElementById("IGRID").innerHTML=ICONS.map(ic=>`<div class="iopt ${ic===selIco?"sel":""}" onclick="pIco('${ic}')">${ic}</div>`).join("")}
